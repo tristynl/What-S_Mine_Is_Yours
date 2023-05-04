@@ -13,7 +13,7 @@ class Menu extends Phaser.Scene {
         this.add.image(0,0, 'menuBackdrop').setOrigin(0,0);
 
         //add Player
-        this.p1 = new Character(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'player').setOrigin(0.5, 0);
+        //this.p1 = new Character(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'player').setOrigin(0.5, 0);
 
 
         let menuConfig = {
