@@ -48,7 +48,7 @@ class Menu extends Phaser.Scene {
     }
 
     update() {
-        if(Phaser.InputKeyboard.JustDown(keySPACEBAR)){
+        if(Phaser.InputKeyboard.isDown(keySPACEBAR)){
             this.isCool = true;
             console.log(this.isCool);    
         }
