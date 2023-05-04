@@ -19,7 +19,7 @@ class Scene2 extends Phaser.Scene {
         //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
         //For text
-        this.text = this.add.text(325, 435);
+        this.text = this.add.text(200, 435); //325, 435
         this.text1 = this.add.text(520, 470);
     }
 
@@ -33,18 +33,25 @@ class Scene2 extends Phaser.Scene {
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
             this.text1.setText(`Press D for monologue`);
-            //this.add.text(30, 30, 'Let em cook bruh');
-            //console.log("Come on brotha");        
         }
 
         if(this.counter == 1){
-           this.text.setText(`I can’t wait to show them this outfit I’ve been saving! `);
-            //this.add.text(30, 30, 'Let em cook bruh'); 
+           this.text.setText(`I can’t wait to show them this \n outfit I’ve been saving! `);
         }
         if(this.counter == 2){
-            this.text.setText(`Come on bro`);
-            //this.add.text(30, 30, 'Deez nutz');     
+            this.text.setText(`Hmm, what if they don’t like it …`);
         }
-        //Just keep doing if statements 
+        if(this.counter == 3){
+            this.text.setText(`Nahhh, they’re going to love it! `);
+        }
+        if(this.counter == 4){
+            this.text.setText(`Ahh I have so many questions for them. `);
+        }
+        if(this.counter == 5){
+            this.text.setText(` I wonder what their favorite food is? `);
+        }
+        if(this.counter == 6){
+            this.text.setText(`I hope they like sushi. I’ve been dreaming \n about sushi dates with them.`);
+        }
     }
 }

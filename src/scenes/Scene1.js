@@ -15,12 +15,12 @@ class Scene1 extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         //implement scrolling
-        this.bedroom = this.add.tileSprite(0, 0, 750, 500, 'bedroom').setOrigin(0,0).setScrollFactor(0, 1);
+        //this.bedroom = this.add.tileSprite(0, 0, 750, 500, 'bedroom').setOrigin(0,0).setScrollFactor(0, 1);
 
     }
 
     update() {
-        this.bedroom.tilePositionX += 1;
+        //this.bedroom.tilePositionX += 1;
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
             //this.sound.play('sfx_select');
             this.scene.start('Scene2');    
