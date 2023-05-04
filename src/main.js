@@ -1,7 +1,7 @@
 let config = {
     type: Phaser.CANVAS,
-    width: 1500,
-    height: 1000,
+    width: 750,
+    height: 500,
     scene: [Menu]
 }
 
@@ -12,4 +12,4 @@ let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;
 
 //reserve keyboard variables
-let keySPACEBAR, keyLEFT, keyRIGHT;
+let keyLEFT, keyRIGHT, keyT;

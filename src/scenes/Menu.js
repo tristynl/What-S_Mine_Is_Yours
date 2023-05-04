@@ -13,7 +13,7 @@ class Menu extends Phaser.Scene {
 
         let menuConfig = {
             fontFamily: 'Courier',
-            fontSize: '28px',
+            //fontSize: '28px',
             align: 'right',
             padding: {
                 top: 5,
@@ -22,20 +22,22 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
         }
 
-        const text1 = this.add.text(60, 100, 'What\'s Mine Is Yours', {
+        const text1 = this.add.text(375, 175, 'What\'s Mine \nIs Yours', {
             fontFamily: 'Courier',
-            fontSize: '64px',
+            fontSize: '50px',
             color: 'pink',
+            align: 'center',
             padding: {
                 left: 5,
                 right: 5
             }
         });
 
-        const text2 = this.add.text(60, 150, 'Press Spacebar To Start', {
+        const text2 = this.add.text(200, 400, 'Press T To Start', {
             fontFamily: 'Courier',
-            fontSize: '32px',
+            fontSize: '40px',
             color: 'pink',
+            align: 'center',
             padding: {
                 left: 5,
                 right: 5
@@ -43,14 +45,19 @@ class Menu extends Phaser.Scene {
         });
 
         //Define keys
-        keySPACEBAR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACEBAR);
-        this.isCool = false;
+        keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
+       // keySPACEBAR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACEBAR);
+        //this.isCool = false;
     }
 
     update() {
-        if(Phaser.InputKeyboard.JustDown(keySPACEBAR)){
+        if (Phaser.Input.Keyboard.JustDown(keyT)) {
+            //this.sound.play('sfx_select');
+            this.scene.start("Scene1");    
+          }
+       /* if(Phaser.InputKeyboard.JustDown(keySPACEBAR)){
             this.isCool = true;
             console.log(this.isCool);    
-        }
+        }*/
     }
 }
