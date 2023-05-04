@@ -46,6 +46,7 @@ class Menu extends Phaser.Scene {
 
         //Define keys
         keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
+        keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
        // keySPACEBAR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACEBAR);
         //this.isCool = false;
     }
@@ -55,6 +56,13 @@ class Menu extends Phaser.Scene {
             //this.sound.play('sfx_select');
             this.scene.start("Scene1");    
           }
+
+        if (Phaser.Input.Keyboard.JustDown(keyS)) {
+            //this.sound.play('sfx_select');
+            this.scene.start("Scene2");    
+        }
+        
+        
        /* if(Phaser.InputKeyboard.JustDown(keySPACEBAR)){
             this.isCool = true;
             console.log(this.isCool);    
