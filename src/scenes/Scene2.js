@@ -32,13 +32,13 @@ class Scene2 extends Phaser.Scene {
         
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
-            this.text1.setText(`Move it along`);
+            this.text1.setText(`Press D for monologue`);
             //this.add.text(30, 30, 'Let em cook bruh');
             //console.log("Come on brotha");        
         }
 
         if(this.counter == 1){
-           this.text.setText(`Let em cook`);
+           this.text.setText(`I can’t wait to show them this outfit I’ve been saving! `);
             //this.add.text(30, 30, 'Let em cook bruh'); 
         }
         if(this.counter == 2){
