@@ -20,7 +20,7 @@ class Scene2 extends Phaser.Scene {
     update() {
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
             //this.sound.play('sfx_select');
-            console.log("Bitch please work");   
+            this.scene.start('Scene3');     
         }
         
         

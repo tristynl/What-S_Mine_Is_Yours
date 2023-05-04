@@ -1,16 +1,16 @@
-class Scene5 extends Phaser.Scene {
+class Scene7 extends Phaser.Scene {
     constructor() {
-        super('Scene5');
+        super('Scene7');
     }
 
     preload() {
-        this.load.image('stairs', './assets/staircase.png');
+        this.load.image('toy', './assets/toystore.png');
         
     }
 
     create() {
         //add background to scene
-        this.add.image(0, 0, 'stairs').setOrigin(0, 0);
+        this.add.image(0, 0, 'toy').setOrigin(0, 0);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
@@ -18,8 +18,7 @@ class Scene5 extends Phaser.Scene {
 
     update() {
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            //console.log("Good for you bro");
-            this.scene.start('Scene6');    
+            this.scene.start('Scene8');    
         }
     }
 }
