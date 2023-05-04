@@ -18,5 +18,8 @@ class Scene1 extends Phaser.Scene {
     update() {
         //if condition, if player hits the side of screen
         //this.scene.start('Scene2');
+        if (Phaser.Input.Keyboard.JustDown(keyF)) {
+            this.scene.start("Scene2");
+        }
     }
 }
