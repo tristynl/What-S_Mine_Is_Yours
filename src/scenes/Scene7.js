@@ -5,14 +5,17 @@ class Scene7 extends Phaser.Scene {
 
     preload() {
         this.load.image('toy', './assets/toystore.png');
+        this.load.image('plush', './assets/objects/bunny.png');
         
     }
 
     create() {
         //add background to scene
         this.add.image(0, 0, 'toy').setOrigin(0, 0);
-        keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
-        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        this.add.image(250, 280, 'plush').setOrigin(0, 0);
+        keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);  //move to next scene
+        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);  //open dialogue text
+        keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);  //interact with object
         //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         this.text = this.add.text(200, 435); //325, 435

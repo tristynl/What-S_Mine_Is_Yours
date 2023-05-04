@@ -5,12 +5,13 @@ class Scene9 extends Phaser.Scene {
 
     preload() {
         this.load.image('candy', './assets/candyshop.png');
-        
+        this.load.image('candyCane', './assets/objects/candy_cane.png');
     }
 
     create() {
         //add background to scene
         this.add.image(0, 0, 'candy').setOrigin(0, 0);
+        this.add.image(280, 438, 'candyCane').setOrigin(0, 0);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
