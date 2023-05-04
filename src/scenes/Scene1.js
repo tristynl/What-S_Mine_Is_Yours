@@ -21,7 +21,7 @@ class Scene1 extends Phaser.Scene {
         //if condition, if player hits the side of screen
         //this.scene.start('Scene2');
         if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            text1 = this.add.text(375, 175, "Ughh why do I look like this?! ", {
+            this.text1 = this.add.text(375, 175, "Ughh why do I look like this?! ", {
                 fontFamily: 'Courier',
                 fontSize: '28px',
                 color: 'pink',
@@ -34,7 +34,7 @@ class Scene1 extends Phaser.Scene {
             //this.add.text("Ughh why do I look like this?! ");   
         }
 
-        /*if(Phaser.Input.Keyboard.JustDown(keyD)) {
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
             this.add.text("No, no, no I can’t go out looking like this. I don’t even have an outfit yet! ");   
         }
 
@@ -47,7 +47,7 @@ class Scene1 extends Phaser.Scene {
         }
 
         if(Phaser.Input.Keyboard.JustDown(keyF)) {
-            this.scene.start("menuScene");
-        }*/
+            this.scene.start("Scene2");
+        }
     }
 }
