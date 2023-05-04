@@ -4,48 +4,25 @@ class Scene2 extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('bedroom', './assets/bedroom.png');
+        this.load.image('bedroom1', './assets/bedroom.png');
         
     }
 
     create() {
         //add background to scene
-        this.add.image(0, 0, 'bedroom').setOrigin(0, 0);
+        this.add.image(0, 0, 'bedroom1').setOrigin(0, 0);
+        console.log("We at scene 2 y'all");
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
-        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-        keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
-        keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+        //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+        //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
     }
 
     update() {
-        if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
+        if (Phaser.Input.Keyboard.JustDown(keyF)) {
+            //this.sound.play('sfx_select');
+            console.log("Bitch please work");   
         }
-
-        if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.add.text("Hmm, what if they don’t like it … ");   
-        }
-
-        if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
-        }
-
-        if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
-        }
-
-        if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
-        }
-
-        if(Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
-        }
-        //if condition, if player hits the side of screen
         
-        //this.scene.start('Scene2');
-        /*if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            this.scene.start("Scene2");
-        }*/
+        
     }
 }
