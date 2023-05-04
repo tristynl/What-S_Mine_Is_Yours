@@ -19,6 +19,22 @@ class Scene1 extends Phaser.Scene {
     update() {
         //if condition, if player hits the side of screen
         //this.scene.start('Scene2');
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("Ughh why do I look like this?! ");   
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("No, no, no I can’t go out looking like this. I don’t even have an outfit yet! ");   
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("Ughh why,  why, why today?! ");   
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("It’s fine. It’s fine.  Get it together Charlie … get it together. ");   
+        }
+
         if(Phaser.Input.Keyboard.JustDown(keyF)) {
             this.scene.start("menuScene");
         }
