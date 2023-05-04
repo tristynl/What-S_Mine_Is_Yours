@@ -1,6 +1,6 @@
-class Scene1 extends Phaser.Scene {
+class Scene2 extends Phaser.Scene {
     constructor() {
-        super('Scene1');
+        super('Scene2');
     }
 
     preload() {
@@ -18,6 +18,29 @@ class Scene1 extends Phaser.Scene {
     }
 
     update() {
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("Hmm, what if they don’t like it … ");   
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyD)) {
+            this.add.text("I can’t wait to show them this outfit I’ve been saving! ");   
+        }
         //if condition, if player hits the side of screen
         
         //this.scene.start('Scene2');
