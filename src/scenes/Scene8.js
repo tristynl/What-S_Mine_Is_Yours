@@ -3,8 +3,11 @@ class Scene8 extends Phaser.Scene {
         super('Scene8');
     }
 
+    counter = 0;
     preload() {
         this.load.image('street2', './assets/street2.png');
+
+        this.load.image('gi', './assets/player1.png');
         
     }
 
@@ -16,18 +19,23 @@ class Scene8 extends Phaser.Scene {
         //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         this.text = this.add.text(200, 435); //325, 435
-        this.text1 = this.add.text(520, 470);
+        this.text.setText(`Press F`);
+
+        //For person
+        this.p1 = new Character(this, 100, 200, 'gi').setOrigin(0, 0);
     }
 
     update() {
+
+        this.p1.update();
+
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            
-            //this.scene.start('Scene9');    
+            this.scene.start('Scene9');    
         }
 
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
-            this.text1.setText(`Press D for monologue`);
+            
         }
 
         if(this.counter == 1){
