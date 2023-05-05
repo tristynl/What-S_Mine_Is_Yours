@@ -3,8 +3,11 @@ class Scene4 extends Phaser.Scene {
         super('Scene4');
     }
 
+    counter = 0;
     preload() {
         this.load.image('bathroom', './assets/bathroom.png');
+
+        this.load.image('girlr', './assets/player1ref.png');
         
     }
 
@@ -14,39 +17,37 @@ class Scene4 extends Phaser.Scene {
         console.log("We at scene 4 y'all");
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-        //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
-        //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        this.text = this.add.text(200, 435); //325, 435
-        this.text1 = this.add.text(520, 470);
+        keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+        keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+         //For text
+         this.text = this.add.text(180, 435, ' ',{
+            align: 'center',
+            color: 'pink',
+        }); //325, 435
+        this.text1 = this.add.text(500, 470);
+        this.text1.setText(`Press D for More Dialouge`);
+        this.text.setText(`Time to get ready!`);
+
+        this.p1 = new Character(this, 680, 200, 'girlr').setOrigin(0, 0);
+
     }
 
     update() {
-        if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            this.scene.start('Scene5');    
-        }
+
+        this.p1.update();
 
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
-            this.text1.setText(`Press D for monologue`);
         }
 
         if(this.counter == 1){
-           this.text.setText(`I can’t wait to show them this \n outfit I’ve been saving! `);
+           this.text.setText(`...`);
+           this.text1.setText(`Press F...`)
         }
-        if(this.counter == 2){
-            this.text.setText(`Hmm, what if they don’t like it …`);
-        }
-        if(this.counter == 3){
-            this.text.setText(`Nahhh, they’re going to love it! `);
-        }
-        if(this.counter == 4){
-            this.text.setText(`Ahh I have so many questions for them. `);
-        }
-        if(this.counter == 5){
-            this.text.setText(` I wonder what their favorite food is? `);
-        }
-        if(this.counter == 6){
-            this.text.setText(`I hope they like sushi. I’ve been dreaming \n about sushi dates with them.`);
+       
+
+        if (Phaser.Input.Keyboard.JustDown(keyF)) {
+            this.scene.start('Scene5');    
         }
     }
 }

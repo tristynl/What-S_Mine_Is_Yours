@@ -4,22 +4,19 @@ class Character extends Phaser.GameObjects.Sprite {
         super(scene, x, y, texture, frame);
 
         scene.add.existing(this);
-        this.isMoving = false;
+        //this.isMoving = false;
         this.moveSpeed = 2;
+        //edge = false;
     }
 
     update() {
-        if(!this.isMoving) {
-            if(keyLEFT.isDown && this.x >= borderUISize + this.width) {
-                this.x -= this.moveSpeed;
-            } else if (keyRIGHT.isDown && this.x <= game.config.width - borderUISize - this.width) {
-                this.x += this.moveSpeed;
-            }
-        }
-    }
-
-    reset() {
-        this.isMoving = false;
-        this.y = game.config.height - borderUISize - borderPadding;
+       
+        if(keyLEFT.isDown && this.x >= borderUISize) {
+            //console.log('LEFT IS PRESSED YALL');
+            this.x -= this.moveSpeed;
+        }else if (keyRIGHT.isDown && this.x <= game.config.width - borderUISize - this.width) {
+            //console.log('RIGHT IS PRESSED YALL');
+            this.x += this.moveSpeed;
+        }   
     }
 }

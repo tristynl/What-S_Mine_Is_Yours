@@ -21,7 +21,8 @@ class Scene8 extends Phaser.Scene {
 
     update() {
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            this.scene.start('Scene9');    
+            
+            //this.scene.start('Scene9');    
         }
 
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
