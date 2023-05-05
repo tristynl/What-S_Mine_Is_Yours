@@ -13,6 +13,8 @@ class Scene3 extends Phaser.Scene {
     create() {
         //add background to scene
         this.add.image(0, 0, 'bedroom2').setOrigin(0, 0);
+        this.text2 = this.add.text(500, 50);
+        this.text2.setText(`Press left/right keys \n to move Player`);
         //console.log("We at scene 3 y'all");
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);

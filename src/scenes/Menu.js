@@ -7,10 +7,15 @@ class Menu extends Phaser.Scene {
         //Load background image
         this.load.image('menuBackdrop', './assets/titlescreen.png');
         this.load.image('player', './assets/Player1.png');
+        this.load.audio('chill_bg', './assets/eggtoast.mp3');
     }
 
     create() {
         this.add.image(0,0, 'menuBackdrop').setOrigin(0,0);
+
+        //play background music
+        this.sound.add('chill_bg',{ loop: false, volume : 0.1 }).play();
+
 
         //add Player
         //this.p1 = new Character(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'player').setOrigin(0.5, 0);
@@ -67,10 +72,5 @@ class Menu extends Phaser.Scene {
             this.scene.start("Scene2");    
         }
         
-        
-       /* if(Phaser.InputKeyboard.JustDown(keySPACEBAR)){
-            this.isCool = true;
-            console.log(this.isCool);    
-        }*/
     }
 }

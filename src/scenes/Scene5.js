@@ -14,6 +14,8 @@ class Scene5 extends Phaser.Scene {
         this.add.image(0, 0, 'stairs').setOrigin(0, 0);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        this.text2 = this.add.text(500, 50);
+        this.text2.setText(`Press left/right keys \n to move Player`);
         //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         
