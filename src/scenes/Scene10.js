@@ -51,12 +51,12 @@ class Scene10 extends Phaser.Scene {
         }
         if(this.counter == 5){
             this.text.setText(` `);
-            this.text.setText(`Oh! Uhhhhh. I don't know it's just a gift for you.`);
+            this.text.setText(`I don't know it's just a\ngift for you.`);
             this.text2.setText(`Press F...`);
         }
         if(this.counter == 6){
             this.text.setText(` `);
-            this.text2.setText(`Oh! Well I have something for you!`);
+            this.text2.setText(`Oh! Well I have\nsomething for you!`);
         }
         if(this.counter == 7){
             //this.text.setText(` `);
