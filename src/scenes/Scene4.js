@@ -44,11 +44,9 @@ class Scene4 extends Phaser.Scene {
 
         if(this.counter == 1){
            this.text.setText(`...`);
-           this.text1.setText(`Press F...`)
         }
        
-
-        if (Phaser.Input.Keyboard.JustDown(keyF)) {
+        if (Phaser.Input.Keyboard.JustDown(keyF) && this.counter >= 1) {
             this.scene.start('Scene5');    
         }
     }

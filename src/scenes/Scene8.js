@@ -7,7 +7,7 @@ class Scene8 extends Phaser.Scene {
     preload() {
         this.load.image('street2', './assets/street2.png');
 
-        this.load.image('gi', './assets/player1.png');
+        
         
     }
 
@@ -22,39 +22,14 @@ class Scene8 extends Phaser.Scene {
         this.text.setText(`Press F`);
 
         //For person
-        this.p1 = new Character(this, 100, 200, 'gi').setOrigin(0, 0);
     }
 
     update() {
 
-        this.p1.update();
 
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
             this.scene.start('Scene9');    
         }
 
-        if (Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.counter += 1;
-            
-        }
-
-        if(this.counter == 1){
-           this.text.setText(`I can’t wait to show them this \n outfit I’ve been saving! `);
-        }
-        if(this.counter == 2){
-            this.text.setText(`Hmm, what if they don’t like it …`);
-        }
-        if(this.counter == 3){
-            this.text.setText(`Nahhh, they’re going to love it! `);
-        }
-        if(this.counter == 4){
-            this.text.setText(`Ahh I have so many questions for them. `);
-        }
-        if(this.counter == 5){
-            this.text.setText(` I wonder what their favorite food is? `);
-        }
-        if(this.counter == 6){
-            this.text.setText(`I hope they like sushi. I’ve been dreaming \n about sushi dates with them.`);
-        }
     }
 }
