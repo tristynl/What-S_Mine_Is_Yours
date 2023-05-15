@@ -14,6 +14,7 @@ class Scene10 extends Phaser.Scene {
         this.add.image(0, 0, 'fountain').setOrigin(0, 0);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
 
        //For text
         //Lovers' dialouge
@@ -62,8 +63,13 @@ class Scene10 extends Phaser.Scene {
             //this.text.setText(` `);
             this.text.setText(`Oh! *blush*`);
             this.text1.setText(`Press F... for to be continued`);
+            
         }
         
+        if(Phaser.Input.Keyboard.JustDown(keyR)) 
+        {
+            this.scene.start('menuScene');
+        }
 
     }
 }
