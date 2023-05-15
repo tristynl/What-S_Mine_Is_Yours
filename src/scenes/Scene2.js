@@ -10,7 +10,6 @@ class Scene2 extends Phaser.Scene {
 
          //Character
          this.load.image('girl', './assets/player1.png');
-         this.load.image('girlr', './assets/player1ref.png');
         
     }
 
@@ -27,7 +26,7 @@ class Scene2 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
         //For person
-        this.p1 = new Character(this, 100, 200, 'girl').setOrigin(0, 0);
+        this.p1 = new Character(this, 680, 200, 'girl').setOrigin(0, 0);
 
         //this.p1 = new Character(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'girl').setOrigin(0, 0);
 
