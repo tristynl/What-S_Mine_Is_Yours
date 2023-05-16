@@ -77,6 +77,16 @@ class Scene10 extends Phaser.Scene {
             },
         };
 
+        /* const startButton = new Button(330, 350, 'Restart Game', this, () => this.scene.start("menuScene"));
+
+        startButton = scene.add.text(scene.cameras.main.centerX, scene.cameras.main.centerY, 'Restart game', textStyle)
+            .setOrigin(0.5)
+            .setPadding(10)
+            .setStyle({ backgroundColor: '#111' })
+            .setInteractive({ useHandCursor: true })
+            .on('pointerdown', startGame)
+            .on('pointerover', () => startButton.setStyle({ fill: '#f39c12' }))
+            .on('pointerout', () => startButton.setStyle({ fill: '#FFF' })) */ 
         
         if(Phaser.Input.Keyboard.JustDown(keyR)) 
         {
