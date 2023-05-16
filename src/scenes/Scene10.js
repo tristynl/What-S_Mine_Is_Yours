@@ -65,6 +65,18 @@ class Scene10 extends Phaser.Scene {
             this.text1.setText(`Press F... for to be continued`);
             
         }
+
+        let endConfig = {
+            fontFamily : 'Courier',
+            fontSize : '28px',
+            color: 'pink',
+            align: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+        };
+
         
         if(Phaser.Input.Keyboard.JustDown(keyR)) 
         {
