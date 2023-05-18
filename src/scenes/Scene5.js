@@ -6,7 +6,8 @@ class Scene5 extends Phaser.Scene {
     counter = 0;
     preload() {
         this.load.image('stairs', './assets/staircase.png');
-        this.load.image('girl5', './assets/player1.png');
+        this.load.image('girl5', './assets/Player1.png');
+        this.load.image('boy5', './assets/player2.png');
 
     }
 
@@ -17,9 +18,12 @@ class Scene5 extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         this.text2 = this.add.text(500, 50);
         this.text2.setText(`Press left/right keys \n to move Player`);
-        //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
-        //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        
+        keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+        keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+
+        this.p1 = new Character(this, 150, 100, 'girl5').setScale(.5).setOrigin(0, 0);
+        this.p2 = new Character(this, 450, 100, 'boy5').setScale(.5).setOrigin(0, 0);
+
         //For text
         //Lovers' dialouge
         this.text = this.add.text(50, 435); //325, 435

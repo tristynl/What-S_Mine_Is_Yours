@@ -6,6 +6,8 @@ class Scene10 extends Phaser.Scene {
     counter = 0;
     preload() {
         this.load.image('fountain', './assets/fountain.png');
+        this.load.image('boy10', './assets/player2ref.png');
+        this.load.image('girl10', './assets/Player1.png');
         //this.load.image('candyCane', './assets/objects/candy_cane.png');
     }
 
@@ -15,6 +17,8 @@ class Scene10 extends Phaser.Scene {
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
+        keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+        keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
        //For text
         //Lovers' dialouge
@@ -26,6 +30,9 @@ class Scene10 extends Phaser.Scene {
         //For more dialouge
         this.text1 = this.add.text(270, 470);
         this.text1.setText(`Press D for More Dialouge`);
+
+        this.p1 = new Character(this, 100, 200, 'girl10').setOrigin(0, 0);
+        this.p2 = new Character(this, 100, 200, 'boy10').setOrigin(0, 0);
     }
 
     update() {
