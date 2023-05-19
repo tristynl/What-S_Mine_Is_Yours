@@ -64,7 +64,7 @@ class Scene2_5 extends Phaser.Scene {
             this.text.setText(`I hope they like sushi. I’ve been dreaming \nabout sushi dates with them.`);
         }
 
-        if (this.counter >= 5) {
+        if (this.counter > 5) {
             this.scene.start('Scene3'); 
         }
     }
