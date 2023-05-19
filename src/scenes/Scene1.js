@@ -18,9 +18,8 @@ class Scene1 extends Phaser.Scene {
         this.text1 = this.add.text(250, 250);
         this.text1.setText(`Press F to Wake Up Charlie`);
 
-        this.player = this.physics.add.sprite(680, 200, 'player')
+        //this.player = this.physics.add.sprite(680, 200, 'player')
 
-        
     }
 
     update() {
