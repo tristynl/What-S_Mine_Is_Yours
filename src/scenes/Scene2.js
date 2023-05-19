@@ -37,7 +37,7 @@ class Scene2 extends Phaser.Scene {
        
         this.p1.update();
 
-        /*if (Phaser.Input.Keyboard.JustDown(keyW)) {
+        if (Phaser.Input.Keyboard.JustDown(keyW)) {
             this.text3.setText(` `);
             this.text1.setText(`Press D for More Dialogue`);
             this.text.setText(`I can’t wait to show them this \n outfit I’ve been saving!`);  
@@ -66,7 +66,7 @@ class Scene2 extends Phaser.Scene {
 
         if (Phaser.Input.Keyboard.JustDown(keyF) && this.counter >= 5) {
             this.scene.start('Scene3'); 
-        }*/
+        }
 
     }
 }

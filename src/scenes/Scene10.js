@@ -32,7 +32,7 @@ class Scene10 extends Phaser.Scene {
         this.text1.setText(`Press D for More Dialouge`);
 
         this.p1 = new Character(this, 100, 200, 'girl10').setOrigin(0, 0);
-        this.p2 = new Character(this, 100, 200, 'boy10').setOrigin(0, 0);
+        this.p2 = new Character(this, 600, 200, 'boy10').setOrigin(0, 0);
     }
 
     update() {

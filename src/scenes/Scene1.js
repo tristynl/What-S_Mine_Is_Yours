@@ -17,6 +17,10 @@ class Scene1 extends Phaser.Scene {
         //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         this.text1 = this.add.text(250, 250);
         this.text1.setText(`Press F to Wake Up Charlie`);
+
+        this.player = this.physics.add.sprite(680, 200, 'player')
+
+        
     }
 
     update() {
