@@ -28,9 +28,23 @@ class Scene2 extends Phaser.Scene {
         //For text
         this.text3 = this.add.text(250, 250);
         this.text3.setText(`Press W to Wake Up Sam`);
-        this.text = this.add.text(200, 435, ' ',); //325, 435
-        this.text1 = this.add.text(500, 470);
-        
+        this.text = this.add.text(210, 435, ' ',); //325, 435
+
+        //Button
+        let buttonConfig = {
+            fontFamily: 'Georgia',
+            fontSize: '20px',
+            color: '#fcd9ff', //#843605
+            align: 'center',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 0
+        }  
+       
+        const startButton = new Button(488, 460, '...', this, () => this.counter += 1);
+
     }
 
     update() {
@@ -39,16 +53,15 @@ class Scene2 extends Phaser.Scene {
 
         if (Phaser.Input.Keyboard.JustDown(keyW)) {
             this.text3.setText(` `);
-            this.text1.setText(`Press D for More Dialogue`);
             this.text.setText(`I can’t wait to show them this \n outfit I’ve been saving!`);  
         }
         
-        if (Phaser.Input.Keyboard.JustDown(keyD)) {
+        /*if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
-        }
+        }*/
 
         if(this.counter == 1){
-           this.text.setText(`Hmm, what if they don’t like it …`);
+            this.text.setText(`Hmm, what if they don’t like it …`);
         }
         if(this.counter == 2){
             this.text.setText(`Nahhh, they’re going to love it! `);
@@ -60,11 +73,10 @@ class Scene2 extends Phaser.Scene {
             this.text.setText(`I wonder what their favorite food is? `);
         }
         if(this.counter == 5){
-            this.text.setText(`I hope they like sushi. I’ve been dreaming \n about sushi dates with them.`);
-            this.text1.setText(`Press F...`)
+            this.text.setText(`I hope they like sushi. I’ve been dreaming \nabout sushi dates with them.`);
         }
 
-        if (Phaser.Input.Keyboard.JustDown(keyF) && this.counter >= 5) {
+        if (this.counter >= 5) {
             this.scene.start('Scene3'); 
         }
 
