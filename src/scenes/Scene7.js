@@ -8,7 +8,7 @@ class Scene7 extends Phaser.Scene {
         this.load.image('toy', './assets/toystore.png');
         this.load.image('plush', './assets/objects/plush.png');
         this.load.image('rp', './assets/objects/r.png');
-        
+        this.load.image('boy7', './assets/player2.png');
         //this.load.image('guys', './assets/player2.png');
     }
 
@@ -17,11 +17,12 @@ class Scene7 extends Phaser.Scene {
         this.add.image(0, 0, 'toy').setOrigin(0, 0);
         this.add.image(250, 280, 'plush').setOrigin(0, 0);
         this.add.image(350, 280, 'rp').setOrigin(0, 0);
+        this.add.image(0, 300, 'boy7').setScale(.5).setOrigin(0, 0);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);  //move to next scene
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);  //open dialogue text
         keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);  //interact with object
-        //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
-        //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+        keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+        keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         this.text = this.add.text(50, 300); //325, 435
         this.text2 = this.add.text(225, 410);
 
@@ -42,6 +43,10 @@ class Scene7 extends Phaser.Scene {
 
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
+        }
+
+        if (Phaser.Input.Keyboard.JustDown(keyM)) {
+            this.counter == 5;
         }
 
         if(this.counter == 1){
