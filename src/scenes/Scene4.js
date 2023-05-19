@@ -14,7 +14,6 @@ class Scene4 extends Phaser.Scene {
     create() {
         //add background to scene
         this.add.image(0, 0, 'bathroom').setOrigin(0, 0);
-        console.log("We at scene 4 y'all");
         this.text2 = this.add.text(500, 50);
         this.text2.setText(`Press left/right keys \n to move Player`);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
@@ -22,10 +21,7 @@ class Scene4 extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
          //For text
-         this.text = this.add.text(180, 435, ' ',{
-            align: 'center',
-            color: 'pink',
-        }); //325, 435
+        this.text = this.add.text(180, 435, ' '); 
         this.text1 = this.add.text(500, 470);
         this.text1.setText(`Press D for More Dialouge`);
         this.text.setText(`Time to get ready!`);
@@ -43,11 +39,15 @@ class Scene4 extends Phaser.Scene {
         }
 
         if(this.counter == 1){
-           this.text.setText(`...`);
+           this.text.setText(`Press F`);
         }
        
-        if (Phaser.Input.Keyboard.JustDown(keyF) && this.counter >= 1) {
-            this.scene.start('Scene5');    
+        if(Phaser.Input.Keyboard.JustDown(keyF)){
+            this.scene.start('Scene5');
+
         }
+        /*if (Phaser.Input.Keyboard.JustDown(keyF) && this.counter >= 1) {
+            this.scene.start('Scene5');    
+        }*/
     }
 }
