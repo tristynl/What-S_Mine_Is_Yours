@@ -9,9 +9,6 @@ class Character extends Phaser.GameObjects.Sprite {
         //edge = false;
     }
 
-    create() {
-        const player = this.physics.add.sprite(680, 200, 'player')
-    }
 
     update() {
        

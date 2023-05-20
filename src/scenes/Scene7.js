@@ -45,9 +45,9 @@ class Scene7 extends Phaser.Scene {
             this.counter += 1;
         }
 
-        if (Phaser.Input.Keyboard.JustDown(keyM)) {
+        /* if (Phaser.Input.Keyboard.JustDown(keyM)) {
             this.counter == 5;
-        }
+        } */
 
         if(this.counter == 1){
            this.text.setText(` `);
