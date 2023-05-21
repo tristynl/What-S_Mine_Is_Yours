@@ -35,6 +35,9 @@ class Scene10 extends Phaser.Scene {
     }
 
     update() {
+
+        this.p1.update();
+        this.p2.update();
         
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;

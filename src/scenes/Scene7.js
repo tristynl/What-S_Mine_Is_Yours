@@ -17,7 +17,7 @@ class Scene7 extends Phaser.Scene {
         this.add.image(0, 0, 'toy').setOrigin(0, 0);
         this.add.image(0, 0, 'plush').setScale(.5).setOrigin(0, 0);
         this.add.image(0, 0, 'rp').setScale(.5).setOrigin(0, 0);
-        this.add.image(0, 280, 'boy7').setOrigin(0, 0);
+        //this.add.image(0, 280, 'boy7').setOrigin(0, 0);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);  //move to next scene
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);  //open dialogue text
         keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);  //interact with object
@@ -25,6 +25,8 @@ class Scene7 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         this.text = this.add.text(50, 300); //325, 435
         this.text2 = this.add.text(225, 410);
+
+        this.p2 = new Character(this, 0, 200, 'boy7').setOrigin(0, 0);
 
         this.text.setText(`Hi welcome!`);
 
@@ -36,6 +38,7 @@ class Scene7 extends Phaser.Scene {
 
     update() {
 
+        this.p2.update();
 
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
             this.scene.start('Scene8');    

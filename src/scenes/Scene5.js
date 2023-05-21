@@ -37,6 +37,10 @@ class Scene5 extends Phaser.Scene {
     }
 
     update() {
+
+        this.p1.update();
+        this.p2.update();
+        
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
             //console.log("Good for you bro");
             this.scene.start('Scene6');    

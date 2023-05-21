@@ -6,14 +6,14 @@ class Scene9 extends Phaser.Scene {
     counter = 0;
     preload() {
         this.load.image('plant', './assets/flowershop.png'); 
-        this.load.image('girl1', './assets/Player1.png');
+        this.load.image('girl9', './assets/Player1.png');
         this.load.image('rose', './assets/objects/rose.png');    
         this.load.image('succulent', './assets/objects/suc.png');       
     }
 
     create() {
         //Add background to scene
-        this.add.image(50, 100, 'girl1').setOrigin(0, 0);
+        //this.add.image(50, 100, 'girl1').setOrigin(0, 0);
         this.add.image(0, 0, 'plant').setOrigin(0, 0);      
         this.add.image(0, -10, 'rose').setScale(.5).setOrigin(0.0);
         this.add.image(0, 0, 'succulent').setScale(.5).setOrigin(0, 0);
@@ -21,9 +21,13 @@ class Scene9 extends Phaser.Scene {
 
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+        keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
         this.text = this.add.text(50, 300); //325, 435
         this.text2 = this.add.text(100, 410);
+        
+        this.p1 = new Character(this, 50, 160, 'girl9').setOrigin(0, 0);
 
         this.text2.setText(`Hi welcome!`);
 
@@ -33,6 +37,8 @@ class Scene9 extends Phaser.Scene {
     }
 
     update() {
+
+        this.p1.update();
         
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
