@@ -13,7 +13,7 @@ class Scene9 extends Phaser.Scene {
 
     create() {
         //Add background to scene
-        this.add.image(0, 0, 'girl1').setOrigin(0, 0);
+        this.add.image(50, 100, 'girl1').setOrigin(0, 0);
         this.add.image(0, 0, 'plant').setOrigin(0, 0);      
         this.add.image(0, -10, 'rose').setScale(.5).setOrigin(0.0);
         this.add.image(0, 0, 'succulent').setScale(.5).setOrigin(0, 0);
