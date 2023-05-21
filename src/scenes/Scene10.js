@@ -68,7 +68,7 @@ class Scene10 extends Phaser.Scene {
         if(this.counter == 7){
             //this.text.setText(` `);
             this.text.setText(`Oh! *blush*`);
-            this.text1.setText(`Press R... for to be continued`);
+            //this.text1.setText(`Press R... for to be continued`);
             
         }
 
@@ -86,10 +86,10 @@ class Scene10 extends Phaser.Scene {
         const restartButton = new Button(330, 350, 'Restart Game', this, () => this.scene.start("menuScene"));
 
         
-        if(Phaser.Input.Keyboard.JustDown(keyR)) 
+        /* if(Phaser.Input.Keyboard.JustDown(keyR)) 
         {
             this.scene.start('menuScene');
-        }
+        } */
 
     }
 }
