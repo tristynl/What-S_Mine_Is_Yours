@@ -72,8 +72,55 @@ class Scene10 extends Phaser.Scene {
             //this.text.setText(` `);
             this.text.setText(`Oh! *blush*`);
             //this.text1.setText(`Press R... for to be continued`);
-            
         }
+        if(this.counter == 8){
+            this.text.setText(` `);
+            this.text2.setText(`I love it!`);
+        }
+        if(this.counter == 9){
+            this.text.setText(` `);
+            this.text2.setText(`Oh … you do?!`);
+        }
+        if(this.counter == 10){
+            this.text.setText(` `);
+            this.text2.setText(`I also got you something!`);
+        }
+        if(this.counter == 11){
+            this.text.setText(` `);
+            this.text2.setText(`Wait … really?!`);
+        }
+        if(this.counter == 12){
+            this.text.setText(` `);
+            this.text2.setText(`Surprise!`);
+        }
+        if(this.counter == 13){
+            this.text.setText(` `);
+            this.text2.setText('Wow, no one has ever gifted me \n anything before …');
+        }
+        if(this.counter == 14){
+            this.text.setText(` `);
+            this.text2.setText(`Sooo … what do you think?!`);
+        }
+        if(this.counter == 15){
+            this.text.setText(` `);
+            this.text2.setText(`I love you …`);
+        }
+        if(this.counter == 16){
+            this.text.setText(` `);
+            this.text2.setText(`WAIT. I meant I love it. \n I love IT!`);
+        }
+        if(this.counter == 17){
+            this.text.setText(` `);
+            this.text2.setText(`Aw, Charlie, I love you too!`);
+        }
+        if(this.counter == 18){
+            this.text.setText(` `);
+            this.text2.setText(`Wait … really?!`);
+        }
+        if(this.counter >= 18) {
+            this.restartButton = new Button(350, 350, 'Restart Game', this, () => this.scene.start("menuScene"));
+        }
+        
 
         let endConfig = {
             fontFamily : 'Courier',
@@ -86,7 +133,7 @@ class Scene10 extends Phaser.Scene {
             },
         };
 
-        const restartButton = new Button(330, 350, 'Restart Game', this, () => this.scene.start("menuScene"));
+        //const restartButton = new Button(330, 350, 'Restart Game', this, () => this.scene.start("menuScene"));
 
         
         /* if(Phaser.Input.Keyboard.JustDown(keyR)) 
