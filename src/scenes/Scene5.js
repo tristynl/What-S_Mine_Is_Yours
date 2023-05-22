@@ -32,18 +32,27 @@ class Scene5 extends Phaser.Scene {
 
         this.text.setText(`Breathe Charlie … breathe.`);
 
+        //Button
+        let buttonConfig = {
+            fontFamily: 'Georgia',
+            fontSize: '20px',
+            color: '#fcd9ff', //#843605
+            align: 'center',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 0
+        }  
+        const startButton = new Button(375, 460, '...', this, () => this.counter += 1);
+
     }
 
     update() {
-        
+
         this.p1.update();
         this.p2.update();
 
-
-        if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            //console.log("Good for you bro");
-            this.scene.start('Scene6');    
-        }
 
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
@@ -68,6 +77,10 @@ class Scene5 extends Phaser.Scene {
         if(this.counter == 5){
             this.text.setText(` `);
             this.text1.setText(`Alright, let’s go!`);
+        }
+
+        if(this.counter > 5){
+            this.scene.start('Scene6');   
         }
     }
 }
