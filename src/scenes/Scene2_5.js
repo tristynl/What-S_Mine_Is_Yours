@@ -10,6 +10,9 @@ class Scene2_5 extends Phaser.Scene {
 
          //Character
          this.load.image('girl2', './assets/Player1.png');
+
+         this.load.image('tBox', './assets/textbox.png');
+
         
     }
 
@@ -37,6 +40,9 @@ class Scene2_5 extends Phaser.Scene {
             },
             fixedWidth: 0
         }  
+
+        //this.add.image(0, 300, 'tBox').setOrigin(0, 0).setScale(.5);
+        
         const startButton = new Button(488, 460, '...', this, () => this.counter += 1);
         this.text.setText(`I can’t wait to show them this \n outfit I’ve been saving!`);  
 

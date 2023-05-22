@@ -60,22 +60,8 @@ class Menu extends Phaser.Scene {
         const startButton = new Button(525, 380, 'Start Game', this, () => this.scene.start('Scene1'));
 
         //Define keys
-        keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
        // keySPACEBAR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACEBAR);
         //this.isCool = false;
-    }
-
-    update() {
-        if (Phaser.Input.Keyboard.JustDown(keyT)) {
-            //this.sound.play('sfx_select');
-            this.scene.start("Scene1");    
-          }
-
-        if (Phaser.Input.Keyboard.JustDown(keyS)) {
-            //this.sound.play('sfx_select');
-            this.scene.start("Scene2");    
-        }
-        
     }
 }
