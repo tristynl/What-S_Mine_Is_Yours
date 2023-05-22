@@ -8,7 +8,8 @@ class Scene9 extends Phaser.Scene {
         this.load.image('plant', './assets/flowershop.png'); 
         this.load.image('girl9', './assets/Player1.png');
         this.load.image('rose', './assets/objects/rose.png');    
-        this.load.image('succulent', './assets/objects/suc.png');       
+        this.load.image('succulent', './assets/objects/suc.png');  
+        this.load.image('cashier1', './assets/flowershop-cashier.png');     
     }
 
     create() {
@@ -17,6 +18,7 @@ class Scene9 extends Phaser.Scene {
         this.add.image(0, 0, 'plant').setOrigin(0, 0);      
         this.add.image(0, -10, 'rose').setScale(.5).setOrigin(0.0);
         this.add.image(0, 0, 'succulent').setScale(.5).setOrigin(0, 0);
+        this.add.image(0, 90, 'cashier1').setScale(.5).setOrigin(0, 0);
 
 
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);

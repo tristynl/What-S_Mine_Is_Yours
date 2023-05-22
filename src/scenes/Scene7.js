@@ -8,6 +8,7 @@ class Scene7 extends Phaser.Scene {
         this.load.image('toy', './assets/toystore.png');
         this.load.image('plush', './assets/objects/plush.png');
         this.load.image('rp', './assets/objects/r.png');
+        this.load.image('cashier', './assets/toystore-cashier.png');
         this.load.image('boy7', './assets/player2.png');
         //this.load.image('guys', './assets/player2.png');
     }
@@ -17,6 +18,7 @@ class Scene7 extends Phaser.Scene {
         this.add.image(0, 0, 'toy').setOrigin(0, 0);
         this.add.image(0, 0, 'plush').setScale(.5).setOrigin(0, 0);
         this.add.image(0, 0, 'rp').setScale(.5).setOrigin(0, 0);
+        this.add.image(30, 120, 'cashier').setScale(.5).setOrigin(0, 0);
         //this.add.image(0, 280, 'boy7').setOrigin(0, 0);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);  //move to next scene
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);  //open dialogue text
@@ -54,11 +56,11 @@ class Scene7 extends Phaser.Scene {
         }
 
         if (Phaser.Input.Keyboard.JustDown(keyM)) {
-            this.counter == 5;
-            this.keyObj = this.input.keyboard.addKey('M');
-            //this.keyObj = this.input.keyboard.addKey('rp');
-            this.keyObj.destroy();
-            //this.collectPlush();
+            //this.counter == 5;
+            //this.keyObj = this.input.keyboard.addKey('M');
+            //this.keyObj.destroy();
+            this.collectPlush(this.toy);
+            this.collectPlush(this.toy1);
         }
 
         if(this.counter == 1){
@@ -80,9 +82,11 @@ class Scene7 extends Phaser.Scene {
         }
     }
 
-    /* collectPlush(p2, plush, rp) {
-        plush.destroy();
-        rp.destroy();
+    collectPlush(p2, plush, rp) {
+        let toy = this.add.sprite(plush, 'plush').setOrigin(0, 0);
+        let toy1 = this.add.sprite(rp, 'rp').setOrigin(0, 0);
+        toy.destroy();
+        toy1.destroy();
         return false;
-    } */
+    }
 }
