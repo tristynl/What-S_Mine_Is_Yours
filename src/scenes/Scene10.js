@@ -118,7 +118,7 @@ class Scene10 extends Phaser.Scene {
             this.text2.setText(`Wait … really?!`);
         }
         if(this.counter >= 18) {
-            this.restartButton = new Button(350, 350, 'Restart Game', this, () => this.scene.start("menuScene"));
+            this.restartButton = new Button(370, 300, 'Restart Game', this, () => this.scene.start("menuScene"));
         }
         
 
