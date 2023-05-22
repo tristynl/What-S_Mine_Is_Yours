@@ -34,6 +34,11 @@ class Scene7 extends Phaser.Scene {
         this.text1 = this.add.text(270, 470);
         this.text1.setText(`Press D for More Dialouge`);
 
+        /* this.Scene7.setCollisionBetween(0, 500, true, 'toy');
+        this.p2.setCollideWorldBounds(true);
+        this.physics.add.collider(p2, plush, rp);
+        this.physics.add.overlap(p2, toy, collectPlush, null, this); */
+
     }
 
     update() {
@@ -53,6 +58,7 @@ class Scene7 extends Phaser.Scene {
             this.keyObj = this.input.keyboard.addKey('M');
             //this.keyObj = this.input.keyboard.addKey('rp');
             this.keyObj.destroy();
+            //this.collectPlush();
         }
 
         if(this.counter == 1){
@@ -73,4 +79,10 @@ class Scene7 extends Phaser.Scene {
             this.text1.setText(`Press F...`);
         }
     }
+
+    /* collectPlush(p2, plush, rp) {
+        plush.destroy();
+        rp.destroy();
+        return false;
+    } */
 }
