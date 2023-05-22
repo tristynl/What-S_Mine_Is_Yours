@@ -20,20 +20,24 @@ class Scene8 extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
         this.text = this.add.text(200, 435); //325, 435
-        this.text.setText(`Press F`);
 
         //For person
         this.p2 = new Character(this, 150, 300, 'girl8').setScale(.5).setOrigin(0, 0);
 
+        keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
+
+        this.text1 = this.add.text(260, 435);
+        this.text1.setText(`Press T to Enter Store`);
     }
 
     update() {
 
         this.p2.update();
 
-        if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            this.scene.start('Scene9');    
-        }
+        if (Phaser.Input.Keyboard.JustDown(keyT)) {
+            //this.sound.play('sfx_select');
+            this.scene.start("Scene9");    
+          }
 
     }
 }

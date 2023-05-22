@@ -5,7 +5,7 @@ class Scene3 extends Phaser.Scene {
 
     counter = 0;
     preload() {
-        this.load.image('bedroom2', './assets/bedroom.png');
+        this.load.image('bedroom2', './assets/boybed.png');
 
         //Character
         this.load.image('guy', './assets/player2.png');

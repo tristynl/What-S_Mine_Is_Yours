@@ -13,8 +13,6 @@ class Scene6 extends Phaser.Scene {
     create() {
         //add background to scene
         this.add.image(0, 0, 'street1').setOrigin(0, 0);
-        this.text2 = this.add.text(500, 50);
-        this.text2.setText(`Press left/right keys \n to move Player`);
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -23,6 +21,11 @@ class Scene6 extends Phaser.Scene {
         this.text1 = this.add.text(520, 470);
 
         this.p1 = new Character(this, 150, 300, 'boy6').setScale(.5).setOrigin(0, 0);
+        keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
+
+        this.text1 = this.add.text(260, 435);
+        this.text1.setText(`Press T to Enter Store`);
+
 
     }
 
@@ -31,9 +34,10 @@ class Scene6 extends Phaser.Scene {
 
         this.p1.update();
 
-        if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            this.scene.start('Scene7');    
-        }
+        if (Phaser.Input.Keyboard.JustDown(keyT)) {
+            //this.sound.play('sfx_select');
+            this.scene.start("Scene7");    
+          }
 
     }
 }

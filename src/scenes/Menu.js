@@ -43,16 +43,21 @@ class Menu extends Phaser.Scene {
             }
         });
 
-        const text2 = this.add.text(200, 400, 'Press T To Start', {
-            fontFamily: 'Courier',
-            fontSize: '40px',
-            color: 'pink',
+         //Button
+         let buttonConfig = {
+            fontFamily: 'Georgia',
+            fontSize: '50px',
+            color: 'pink', //#843605
             align: 'center',
             padding: {
-                left: 5,
-                right: 5
-            }
-        });
+                top: 30,
+                bottom: 30,
+                left: 30,
+                right: 30,
+            },
+            //fixedWidth: 0
+        }  
+        const startButton = new Button(525, 380, 'Start Game', this, () => this.scene.start('Scene1'));
 
         //Define keys
         keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);

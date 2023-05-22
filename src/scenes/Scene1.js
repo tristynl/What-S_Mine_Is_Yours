@@ -5,7 +5,7 @@ class Scene1 extends Phaser.Scene {
 
     counter = 0;
     preload() {
-        this.load.image('bedroom', './assets/bedroom.png');
+        this.load.image('bedroom', './assets/boybodybed.png');
     }
 
     create() {
@@ -15,7 +15,7 @@ class Scene1 extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         //keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         //keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        this.text1 = this.add.text(250, 250);
+        this.text1 = this.add.text(260, 435);
         this.text1.setText(`Press F to Wake Up Charlie`);
 
         //this.player = this.physics.add.sprite(680, 200, 'player')
