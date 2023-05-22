@@ -1,14 +1,17 @@
+// Character prefab
 class Girl extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x, y, texture, frame);
-        scene.add.existing(this);   // add to existing scene
-        //this.points = pointValue;   // store pointValue
+
+        scene.add.existing(this);
+        //this.isMoving = false;
         this.moveSpeed = 2;
-        //this.moveSpeed = game.settings.spaceshipSpeed;         // pixels per frame
+        //edge = false;
     }
 
+
     update() {
-        //Move spaceship left
-        this.x = this.moveSpeed * Math.sin(45);
+       
+        //this.y -= this.moveSpeed;  
     }
 }

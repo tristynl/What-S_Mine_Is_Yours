@@ -3,6 +3,8 @@ let config = {
     width: 750,
     height: 500,
     scene: [Menu, Scene1, Scene2, Scene2_5, Scene3, Scene4, Scene5, Scene6, Scene7, Scene8, Scene9, Scene10]
+    //scene: [Scene5, Menu, Scene1, Scene2, Scene2_5, Scene3, Scene4, Scene6, Scene7, Scene8, Scene9, Scene10]
+
 }
 
 let game = new Phaser.Game(config);
