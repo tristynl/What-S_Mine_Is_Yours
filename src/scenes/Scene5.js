@@ -4,6 +4,7 @@ class Scene5 extends Phaser.Scene {
     }
 
     counter = 0;
+    moveSpeed = 2;
     preload() {
         this.load.image('stairs', './assets/staircase.png');
         this.load.image('girl5', './assets/Player1.png');
@@ -21,8 +22,13 @@ class Scene5 extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
-        this.p1 = new Character(this, 150, 100, 'girl5').setScale(.5).setOrigin(0, 0);
-        this.p2 = new Character(this, 450, 100, 'boy5').setScale(.5).setOrigin(0, 0);
+        this.p1 = new Girl(this, 150, 100, 'girl5').setScale(.5).setOrigin(0, 0);
+
+        //
+        //this.p1 = new Character(this, 150, 100, 'girl5').setScale(.5).setOrigin(0, 0);
+        //this.p2 = new Character(this, 450, 100, 'boy5').setScale(.5).setOrigin(0, 0);
+        //
+
 
         //For text
         //Lovers' dialouge
@@ -37,10 +43,15 @@ class Scene5 extends Phaser.Scene {
     }
 
     update() {
+<<<<<<< Updated upstream
 
         this.p1.update();
         this.p2.update();
         
+=======
+        
+        this.p1.update();
+>>>>>>> Stashed changes
         if (Phaser.Input.Keyboard.JustDown(keyF)) {
             //console.log("Good for you bro");
             this.scene.start('Scene6');    
