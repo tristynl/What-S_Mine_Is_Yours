@@ -26,12 +26,26 @@ class Scene10 extends Phaser.Scene {
 
         this.text2.setText(`Hey!`);
 
-        //For more dialouge
-        this.text1 = this.add.text(270, 470);
-        this.text1.setText(`Press D for More Dialouge`);
 
         this.p1 = new Character(this, 100, 200, 'girl10').setOrigin(0, 0);
         this.p2 = new Character(this, 600, 200, 'boy10').setOrigin(0, 0);
+
+         //Button
+         let buttonConfig = {
+            fontFamily: 'Georgia',
+            fontSize: '20px',
+            color: '#fcd9ff', //#843605
+            align: 'center',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 0
+        }  
+
+        //this.add.image(0, 300, 'tBox').setOrigin(0, 0).setScale(.5);
+        
+        const startButton = new Button(375, 460, '...', this, () => this.counter += 1);
     }
 
     update() {
@@ -60,46 +74,43 @@ class Scene10 extends Phaser.Scene {
             this.text2.setText(`In your hand?`);
         }
         if(this.counter == 5){
-            this.text.setText(` `);
+            this.text2.setText(` `);
             this.text.setText(`I don't know it's just a\ngift for you.`);
-            this.text2.setText(`Press F...`);
         }
         if(this.counter == 6){
             this.text.setText(` `);
             this.text2.setText(`Oh! Well I have\nsomething for you!`);
         }
         if(this.counter == 7){
-            //this.text.setText(` `);
             this.text.setText(`Oh! *blush*`);
-            //this.text1.setText(`Press R... for to be continued`);
         }
         if(this.counter == 8){
-            this.text.setText(` `);
-            this.text2.setText(`I love it!`);
+            //this.text.setText(` `);
+            this.text.setText(`I love it!`);
         }
         if(this.counter == 9){
             this.text.setText(` `);
             this.text2.setText(`Oh … you do?!`);
         }
         if(this.counter == 10){
-            this.text.setText(` `);
-            this.text2.setText(`I also got you something!`);
+            this.text2.setText(` `);
+            this.text.setText(`I also got you something!`);
         }
         if(this.counter == 11){
             this.text.setText(` `);
             this.text2.setText(`Wait … really?!`);
         }
         if(this.counter == 12){
-            this.text.setText(` `);
-            this.text2.setText(`Surprise!`);
+            this.text2.setText(` `);
+            this.text.setText(`Surprise!`);
         }
         if(this.counter == 13){
             this.text.setText(` `);
             this.text2.setText('Wow, no one has ever gifted me \n anything before …');
         }
         if(this.counter == 14){
-            this.text.setText(` `);
-            this.text2.setText(`Sooo … what do you think?!`);
+            this.text2.setText(` `);
+            this.text.setText(`Sooo … what do you think?!`);
         }
         if(this.counter == 15){
             this.text.setText(` `);
@@ -110,8 +121,8 @@ class Scene10 extends Phaser.Scene {
             this.text2.setText(`WAIT. I meant I love it. \n I love IT!`);
         }
         if(this.counter == 17){
-            this.text.setText(` `);
-            this.text2.setText(`Aw, Charlie, I love you too!`);
+            this.text2.setText(` `);
+            this.text.setText(`Aw, Charlie, I love you too!`);
         }
         if(this.counter == 18){
             this.text.setText(` `);

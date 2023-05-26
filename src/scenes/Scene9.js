@@ -33,9 +33,22 @@ class Scene9 extends Phaser.Scene {
 
         this.text2.setText(`Hi welcome!`);
 
-        //For more dialouge
-        this.text1 = this.add.text(270, 470);
-        this.text1.setText(`Press D for More Dialouge`);
+         //Button
+         let buttonConfig = {
+            fontFamily: 'Georgia',
+            fontSize: '20px',
+            color: '#fcd9ff', //#843605
+            align: 'center',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 0
+        }  
+
+        //this.add.image(0, 300, 'tBox').setOrigin(0, 0).setScale(.5);
+        
+        const startButton = new Button(488, 460, '...', this, () => this.counter += 1);
     }
 
     update() {
@@ -57,12 +70,9 @@ class Scene9 extends Phaser.Scene {
         if(this.counter == 3){
             this.text2.setText(`I’m already giddy thinking about picking something out for them!`);
         }
-        if(this.counter == 4){
-            this.text1.setText(`Press F...`)
-        }
-        
-        if (Phaser.Input.Keyboard.JustDown(keyF) && this.counter >=4) {
+        if(this.counter > 3){
             this.scene.start('Scene10');    
+
         }
 
     }

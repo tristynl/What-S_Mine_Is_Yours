@@ -20,40 +20,44 @@ class Scene7 extends Phaser.Scene {
         this.add.image(0, 0, 'rp').setScale(.5).setOrigin(0, 0);
         this.add.image(30, 120, 'cashier').setScale(.5).setOrigin(0, 0);
         //this.add.image(0, 280, 'boy7').setOrigin(0, 0);
-        keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);  //move to next scene
-        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);  //open dialogue text
         keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);  //interact with object
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        this.text = this.add.text(50, 300); //325, 435
+        this.text = this.add.text(135, 140); //325, 435
         this.text2 = this.add.text(225, 410);
 
         this.p2 = new Character(this, 0, 200, 'boy7').setOrigin(0, 0);
 
         this.text.setText(`Hi welcome!`);
 
-        //For more dialouge
-        this.text1 = this.add.text(270, 470);
-        this.text1.setText(`Press D for More Dialouge`);
 
         /* this.Scene7.setCollisionBetween(0, 500, true, 'toy');
         this.p2.setCollideWorldBounds(true);
         this.physics.add.collider(p2, plush, rp);
         this.physics.add.overlap(p2, toy, collectPlush, null, this); */
 
+        //Button
+        let buttonConfig = {
+            fontFamily: 'Georgia',
+            fontSize: '20px',
+            color: '#fcd9ff', //#843605
+            align: 'center',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 0
+        }  
+
+        //this.add.image(0, 300, 'tBox').setOrigin(0, 0).setScale(.5);
+        
+        const startButton = new Button(488, 460, '...', this, () => this.counter += 1);
+
     }
 
     update() {
 
         this.p2.update();
-
-        if (Phaser.Input.Keyboard.JustDown(keyF)) {
-            this.scene.start('Scene8');    
-        }
-
-        if (Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.counter += 1;
-        }
 
         if (Phaser.Input.Keyboard.JustDown(keyM)) {
             //this.counter == 5;
@@ -78,7 +82,9 @@ class Scene7 extends Phaser.Scene {
         }
         if(this.counter == 5){
             this.text2.setText(`No no I can’t show up with nothing.\nThink Charlie … think.`);
-            this.text1.setText(`Press F...`);
+        }
+        if(this.counter > 5){
+            this.scene.start('Scene8');    
         }
     }
 
