@@ -36,7 +36,7 @@ class Scene4 extends Phaser.Scene {
         }  
         const startButton = new Button(525, 460, '...', this, () => this.counter += 1);
 
-        this.cameras.main.fadeIn(5000, 0, 0, 0)
+        this.cameras.main.fadeIn(1000, 0, 0, 0)
 
 
     }
