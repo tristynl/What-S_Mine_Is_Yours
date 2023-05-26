@@ -46,6 +46,14 @@ class Scene2_5 extends Phaser.Scene {
         const startButton = new Button(488, 460, '...', this, () => this.counter += 1);
         this.text.setText(`I can’t wait to show them this \n outfit I’ve been saving!`);  
 
+        this.input.keyboard.once(startButton, () => {
+            // fade to black
+            this.cameras.main.fadeOut(5000, 0, 0, 0)
+        })
+        this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+            this.scene.start('Scene3');
+        })
+
 
     }
 

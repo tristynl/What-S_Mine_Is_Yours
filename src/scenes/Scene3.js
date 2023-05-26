@@ -37,6 +37,9 @@ class Scene3 extends Phaser.Scene {
             fixedWidth: 0
         }  
         const startButton = new Button(525, 460, '...', this, () => this.counter += 1);
+
+        this.cameras.main.fadeIn(5000, 0, 0, 0)
+
     }
 
     update() {

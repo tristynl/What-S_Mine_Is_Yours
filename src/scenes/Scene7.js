@@ -63,8 +63,8 @@ class Scene7 extends Phaser.Scene {
             //this.counter == 5;
             //this.keyObj = this.input.keyboard.addKey('M');
             //this.keyObj.destroy();
-            this.collectPlush(this.toy);
-            this.collectPlush(this.toy1);
+            this.collectPlush(toy);
+            this.collectPlush(toy1);
         }
 
         if(this.counter == 1){
