@@ -27,7 +27,7 @@ class Scene9 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
         this.text = this.add.text(50, 300); //325, 435
-        this.text2 = this.add.text(100, 410);
+        this.text2 = this.add.text(135, 140);
         
         this.p1 = new Character(this, 50, 160, 'girl9').setOrigin(0, 0);
 
