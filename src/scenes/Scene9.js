@@ -26,12 +26,13 @@ class Scene9 extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
-        this.text = this.add.text(50, 300); //325, 435
         this.text2 = this.add.text(135, 140);
         
         this.p1 = new Character(this, 50, 160, 'girl9').setOrigin(0, 0);
 
         this.text2.setText(`Hi welcome!`);
+        this.text = this.add.text(215, 410);
+
 
          //Button
          let buttonConfig = {
@@ -65,13 +66,13 @@ class Scene9 extends Phaser.Scene {
 
         if(this.counter == 1){
             //this.text2.setText(` `);
-            this.text2.setText(`Oh wow!`);
+            this.text.setText(`Oh wow!`);
         }
         if(this.counter == 2){
-            this.text2.setText(`Ah, everything looks perfect! There’s so much to choose from!`);
+            this.text.setText(`Ah, everything looks perfect!\nThere’s so much to choose from!`);
         }
         if(this.counter == 3){
-            this.text2.setText(`I’m already giddy thinking about picking something out for them!`);
+            this.text.setText(`I’m already giddy thinking\nabout picking something out for them!`);
         }
         if(this.counter > 3){
             this.scene.start('Scene10');    

@@ -30,12 +30,6 @@ class Scene7 extends Phaser.Scene {
 
         this.text.setText(`Hi welcome!`);
 
-
-        /* this.Scene7.setCollisionBetween(0, 500, true, 'toy');
-        this.p2.setCollideWorldBounds(true);
-        this.physics.add.collider(p2, plush, rp);
-        this.physics.add.overlap(p2, toy, collectPlush, null, this); */
-
         //Button
         let buttonConfig = {
             fontFamily: 'Georgia',
@@ -48,8 +42,6 @@ class Scene7 extends Phaser.Scene {
             },
             fixedWidth: 0
         }  
-
-        //this.add.image(0, 300, 'tBox').setOrigin(0, 0).setScale(.5);
         
         const startButton = new Button(488, 460, '...', this, () => this.counter += 1);
 
@@ -66,8 +58,8 @@ class Scene7 extends Phaser.Scene {
             //this.counter == 5;
             //this.keyObj = this.input.keyboard.addKey('M');
             //this.keyObj.destroy();
-            this.collectPlush(toy);
-            this.collectPlush(toy1);
+            //this.collectPlush(this.toy);
+            //this.collectPlush(this.toy1);
         }
 
         if(this.counter == 1){
@@ -91,11 +83,21 @@ class Scene7 extends Phaser.Scene {
         }
     }
 
-    collectPlush(p2, plush, rp) {
+    checkCollision(player, item){
+        if(player.x < item.x + item.width &&
+            player.x + player.width > item.x &&
+            player.y < item.y + item.height &&
+            player.height + player.y > item.h){
+                return true;
+        }else{
+                return false;
+        }
+    }
+    /*collectPlush(p2, plush, rp) {
         let toy = this.add.sprite(plush, 'plush').setOrigin(0, 0);
         let toy1 = this.add.sprite(rp, 'rp').setOrigin(0, 0);
         toy.destroy();
         toy1.destroy();
         return false;
-    }
+    }*/
 }
