@@ -29,7 +29,7 @@ class Scene8 extends Phaser.Scene {
         this.text1 = this.add.text(260, 435);
         this.text1.setText(`Press T to Enter Store`);
 
-        this.cameras.main.fadeIn(5000, 0, 0, 0)
+        this.cameras.main.fadeIn(1000, 0, 0, 0)
 
     }
 
