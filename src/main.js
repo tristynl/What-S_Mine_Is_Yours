@@ -14,7 +14,7 @@ let borderUISize = game.config.height / 5000; // game.config.height / 15
 let borderPadding = borderUISize / 1000; //borderUISize / 3
 
 //reserve keyboard variables
-let keyLEFT, keyRIGHT, keyT, keyF, keyD, keyM, keyS, keyW, keyR; //T is start, F is nextscene, D is dialogue, M is interactivepickup
+let keyLEFT, keyRIGHT, keyT, keyF, keyD, keyM, keyS, keyW, keyR, keySHIFT; //T is start, F is nextscene, D is dialogue, M is interactivepickup
 
 //reserve bool for edge
 let edge = false;
