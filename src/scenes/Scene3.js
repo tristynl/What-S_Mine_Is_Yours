@@ -4,11 +4,13 @@ class Scene3 extends Phaser.Scene {
     }
 
     counter = 0;
+    
     preload() {
         this.load.image('bedroom2', './assets/boybed.png');
 
         //Character
-        this.load.image('guy', './assets/player2.png');
+        this.load.image('guy', './assets/charliepj.png');
+        this.load.image('guyr', './assets/charliepjreflect.png');
     }
 
     create() {
@@ -22,7 +24,9 @@ class Scene3 extends Phaser.Scene {
         this.text.setText(`Ughh why do I look like this?!`);
 
         //For person
-        this.p1 = new Character(this, 100, 200, 'guy').setOrigin(0, 0);
+        this.p1 = new Character(this, 100, 120, 'guy').setOrigin(0, 0);
+        this.p2 = new Character(this, 100, 120, 'guyr').setOrigin(0, 0);
+        this.p2.setVisible(false);
 
         //Button
         let buttonConfig = {
@@ -45,9 +49,15 @@ class Scene3 extends Phaser.Scene {
     update() {
         
         this.p1.update();
+        this.p2.update();
 
-        if (Phaser.Input.Keyboard.JustDown(keyD)) {
-            this.counter += 1;
+        if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+            this.p1.setVisible(false);
+            this.p2.setVisible(true);
+        }
+        if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
+            this.p1.setVisible(true);
+            this.p2.setVisible(false);
         }
 
         if(this.counter == 1){

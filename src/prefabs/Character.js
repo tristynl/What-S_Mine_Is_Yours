@@ -18,6 +18,9 @@ class Character extends Phaser.GameObjects.Sprite {
         }else if (keyRIGHT.isDown && this.x <= game.config.width - borderUISize - this.width) {
             //console.log('RIGHT IS PRESSED YALL');
             this.x += this.moveSpeed;
-        }   
+        } 
+       
+        x = this.x;
+        y = this.y;
     }
 }
