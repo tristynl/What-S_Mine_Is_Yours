@@ -32,6 +32,7 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
         }
 
+<<<<<<< Updated upstream
         /* const text1 = this.add.text(375, 175, 'What\'s Mine \nIs Yours', {
             fontFamily: 'Courier',
             fontSize: '50px',
@@ -42,6 +43,8 @@ class Menu extends Phaser.Scene {
                 right: 5
             }
         }); */
+=======
+>>>>>>> Stashed changes
 
          //Button
          let buttonConfig = {
