@@ -28,6 +28,10 @@ class Scene7 extends Phaser.Scene {
 
         this.p2 = new Character(this, 0, 200, 'boy7').setOrigin(0, 0);
 
+        this.item = new Item(this, 0, 0, 'plush').setScale(.5).setOrigin(0, 0);
+        this.item1 = new Item(this, 0, 0, 'rp').setScale(.5).setOrigin(0, 0);
+
+
         this.text.setText(`Hi welcome!`);
 
         //Button
@@ -55,6 +59,9 @@ class Scene7 extends Phaser.Scene {
         this.p2.update();
 
         if (Phaser.Input.Keyboard.JustDown(keyM)) {
+            if (this.checkCollision(this.p2, this.item)) {
+                this.item.destroy();
+            }
             //this.counter == 5;
             //this.keyObj = this.input.keyboard.addKey('M');
             //this.keyObj.destroy();
@@ -83,14 +90,14 @@ class Scene7 extends Phaser.Scene {
         }
     }
 
-    checkCollision(player, item){
-        if(player.x < item.x + item.width &&
-            player.x + player.width > item.x &&
-            player.y < item.y + item.height &&
-            player.height + player.y > item.h){
+    checkCollision(p2, item){
+        if(p2.x < item.x + item.width &&
+            p2.x + p2.width > item.x &&
+            p2.y < item.y + item.height &&
+            p2.height + p2.y > item.y){
                 return true;
         }else{
-                return false;
+            return false;
         }
     }
     /*collectPlush(p2, plush, rp) {
