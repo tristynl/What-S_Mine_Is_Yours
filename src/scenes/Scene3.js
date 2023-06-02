@@ -105,7 +105,6 @@ class Scene3 extends Phaser.Scene {
                 this.p4.setVisible(false);
                 this.p3.setVisible(true);
             }
-            
         }
 
 
