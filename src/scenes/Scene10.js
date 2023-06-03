@@ -8,6 +8,7 @@ class Scene10 extends Phaser.Scene {
         this.load.image('fountain', './assets/fountain.png');
         this.load.image('boy10', './assets/player2ref.png');
         this.load.image('girl10', './assets/Player1.png');
+        this.load.image('textbox', './assets/textbox.png');
     }
 
     create() {
@@ -21,6 +22,7 @@ class Scene10 extends Phaser.Scene {
 
        //For text
         //Lovers' dialouge
+        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text = this.add.text(50, 435); //325, 435
         this.text2 = this.add.text(450, 435);
 

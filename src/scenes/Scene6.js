@@ -7,6 +7,8 @@ class Scene6 extends Phaser.Scene {
         this.load.image('street1', './assets/street.png');
         this.load.image('guy6', './assets/charlie.png');
         this.load.image('guyr6', './assets/charliereflect.png');
+        this.load.image('textbox', './assets/textbox.png');
+
 
         
     }
@@ -25,6 +27,7 @@ class Scene6 extends Phaser.Scene {
         this.p2 = new Character(this, 100, 120, 'guyr6').setOrigin(0, 0);
         keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
 
+        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text1 = this.add.text(260, 435);
         this.text1.setText(`Press T to Enter Store`);
 

@@ -10,6 +10,8 @@ class Scene7 extends Phaser.Scene {
         this.load.image('rp', './assets/objects/r.png');
         this.load.image('cashier', './assets/toystore-cashier.png');
         this.load.image('boy7', './assets/player2.png');
+        this.load.image('textbox', './assets/textbox.png');
+
         //this.load.image('guys', './assets/player2.png');
     }
 
@@ -31,7 +33,7 @@ class Scene7 extends Phaser.Scene {
         this.item = new Item(this, 0, 0, 'plush').setScale(.5).setOrigin(0, 0);
         this.item1 = new Item(this, 0, 0, 'rp').setScale(.5).setOrigin(0, 0);
 
-
+        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text.setText(`Hi welcome!`);
 
         //Button

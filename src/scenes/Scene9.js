@@ -9,7 +9,8 @@ class Scene9 extends Phaser.Scene {
         this.load.image('girl9', './assets/Player1.png');
         this.load.image('rose', './assets/objects/rose.png');    
         this.load.image('succulent', './assets/objects/suc.png');  
-        this.load.image('cashier1', './assets/flowershop-cashier.png');     
+        this.load.image('cashier1', './assets/flowershop-cashier.png'); 
+        this.load.image('textbox', './assets/textbox.png');    
     }
 
     create() {
@@ -30,6 +31,7 @@ class Scene9 extends Phaser.Scene {
         
         this.p1 = new Character(this, 50, 160, 'girl9').setOrigin(0, 0);
 
+        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text2.setText(`Hi welcome!`);
         this.text = this.add.text(215, 410);
 

@@ -7,6 +7,8 @@ class Scene2_5 extends Phaser.Scene {
     wake = false;
     preload() {
         this.load.image('bedroom1', './assets/bedroom.png');
+        this.load.image('textbox', './assets/textbox.png');
+
 
          //Character
          this.load.image('girl2', './assets/Player1.png');
@@ -26,6 +28,7 @@ class Scene2_5 extends Phaser.Scene {
         this.p1 = new Character(this, 200, 200, 'girl2').setOrigin(0, 0);
 
         //For text
+        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text = this.add.text(210, 435, ' ',); //325, 435
 
         //Button

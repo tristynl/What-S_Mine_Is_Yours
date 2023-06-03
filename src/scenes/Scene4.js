@@ -6,6 +6,8 @@ class Scene4 extends Phaser.Scene {
     counter = 0;
     preload() {
         this.load.image('bathroom', './assets/bathroom.png');
+        this.load.image('textbox', './assets/textbox.png');
+
 
         this.load.image('girlr', './assets/player1ref.png');
         
@@ -17,6 +19,7 @@ class Scene4 extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
          //For text
+        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text = this.add.text(180, 435, ' '); 
         this.text.setText(`Time to get ready!`);
 
