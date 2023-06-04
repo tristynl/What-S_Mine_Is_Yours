@@ -63,6 +63,7 @@ class Scene7 extends Phaser.Scene {
 
         if (Phaser.Input.Keyboard.JustDown(keyM)) {
             if (this.checkCollision(this.p2, this.item)) {
+                this.item.setVisible(false);
                 this.item.destroy();
             }
             //this.counter == 5;
