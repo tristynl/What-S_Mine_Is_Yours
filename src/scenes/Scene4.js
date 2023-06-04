@@ -19,7 +19,7 @@ class Scene4 extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
          //For text
-        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
+        this.textbox = this.add.image(260, 440, 'textbox').setScale(.4).scaleY=.3;
         this.text = this.add.text(180, 435, ' '); 
         this.text.setText(`Time to get ready!`);
 

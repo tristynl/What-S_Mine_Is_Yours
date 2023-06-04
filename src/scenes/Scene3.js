@@ -29,7 +29,7 @@ class Scene3 extends Phaser.Scene {
         keySHIFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SHIFT);
         
         //For text
-        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
+        this.textbox = this.add.image(380, 440, 'textbox').scaleY=.3;
         this.text = this.add.text(210, 435, ' ',); 
         this.text.setText(`Ughh why do I look like this?!`);
 
