@@ -26,7 +26,7 @@ class Scene7 extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
-        this.textbox = this.add.image(380, 400, 'textbox').setScale(.6).scaleY=.3;
+        this.textbox = this.add.image(420, 425, 'textbox').setScale(.3).scaleX=1.2;
         this.text = this.add.text(135, 140); //325, 435
         this.text2 = this.add.text(225, 410);
 

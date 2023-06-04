@@ -28,7 +28,7 @@ class Scene8 extends Phaser.Scene {
 
         keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
 
-        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
+        this.textbox = this.add.image(370, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text1 = this.add.text(260, 435);
         this.text1.setText(`Press T to Enter Store`);
 
