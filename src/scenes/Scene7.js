@@ -25,15 +25,16 @@ class Scene7 extends Phaser.Scene {
         keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);  //interact with object
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+
+        this.textbox = this.add.image(380, 400, 'textbox').setScale(.6).scaleY=.3;
         this.text = this.add.text(135, 140); //325, 435
         this.text2 = this.add.text(225, 410);
 
         this.p2 = new Character(this, 0, 200, 'boy7').setOrigin(0, 0);
 
-        this.item = new Item(this, 0, 0, 'plush').setScale(.5).setOrigin(0, 0);
-        this.item1 = new Item(this, 0, 0, 'rp').setScale(.5).setOrigin(0, 0);
+        //this.item = new Item(this, 0, 0, 'plush').setScale(.5).setOrigin(0, 0);
+        //this.item1 = new Item(this, 0, 0, 'rp').setScale(.5).setOrigin(0, 0);
 
-        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text.setText(`Hi welcome!`);
 
         //Button
