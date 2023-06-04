@@ -31,7 +31,7 @@ class Scene9 extends Phaser.Scene {
         
         this.p1 = new Character(this, 50, 160, 'girl9').setOrigin(0, 0);
 
-        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
+        this.textbox = this.add.image(370, 420, 'textbox').setScale(.9).scaleY=.3;
         this.text2.setText(`Hi welcome!`);
         this.text = this.add.text(215, 410);
 

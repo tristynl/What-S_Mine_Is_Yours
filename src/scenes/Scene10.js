@@ -22,7 +22,8 @@ class Scene10 extends Phaser.Scene {
 
        //For text
         //Lovers' dialouge
-        this.textbox = this.add.image(380, 440, 'textbox').setScale(.6).scaleY=.3;
+        this.textbox = this.add.image(470, 440, 'textbox').setScale(1.1, .6).scaleY=.3;
+        this.textbox1 = this.add.image(150, 440, 'textbox').setScale(.6).scaleY=.3;
         this.text = this.add.text(50, 435); //325, 435
         this.text2 = this.add.text(450, 435);
 
