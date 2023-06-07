@@ -24,6 +24,7 @@ class Scene2 extends Phaser.Scene {
         this.text3 = this.add.text(250, 435);
         this.text3.setText(`Press W to Wake Up Sam`);
 
+        this.cameras.main.fadeIn(1000, 0, 0, 0)
 
     }
 

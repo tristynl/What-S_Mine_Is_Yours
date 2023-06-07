@@ -57,7 +57,7 @@ class Menu extends Phaser.Scene {
             },
             //fixedWidth: 0
         }  
-        const startButton = new Button(525, 380, 'Start Game', this, () => this.scene.start('Scene1'));
+        const startButton = new Button(525, 380, 'Start Game', this, () => this.scene.start('SceneNote'));
 
         //Define keys
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);

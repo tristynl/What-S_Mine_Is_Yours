@@ -22,6 +22,9 @@ class Scene1 extends Phaser.Scene {
 
         //this.player = this.physics.add.sprite(680, 200, 'player')
 
+        this.cameras.main.fadeIn(1000, 0, 0, 0)
+
+
     }
 
     update() {

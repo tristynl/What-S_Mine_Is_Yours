@@ -101,10 +101,8 @@ class Scene3 extends Phaser.Scene {
             } 
             
             if(this.p4.visible == true){
-                this.p1.destroy();
-                this.p2.destroy();
-                //this.p1.setVisible(false);
-                //this.p2.setVisible(false);
+                this.p1.setVisible(false);
+                this.p2.setVisible(false);
                 this.p4.setVisible(false);
                 this.p3.setVisible(true);
             }

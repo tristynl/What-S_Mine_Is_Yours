@@ -3,12 +3,15 @@ class Scene6 extends Phaser.Scene {
         super('Scene6');
     }
 
+    //toy = false;
+    //candy = false;
     preload() {
         this.load.image('street1', './assets/street.png');
-        this.load.image('guy6', './assets/charlie.png');
-        this.load.image('guyr6', './assets/charliereflect.png');
+        this.load.image('guy6', './assets/minicharlie.png');
+        this.load.image('guyr6', './assets/minicharliereflect.png');
         this.load.image('textbox', './assets/textbox.png');
 
+        this.load.image('td', './assets/toydoor.png');
 
         
     }
@@ -24,17 +27,24 @@ class Scene6 extends Phaser.Scene {
         this.text = this.add.text(200, 435); //325, 435
         this.text1 = this.add.text(520, 470);
 
-        this.p1 = new Character(this, 100, 120, 'guy6').setOrigin(0, 0);
-        this.p2 = new Character(this, 100, 120, 'guyr6').setOrigin(0, 0);
+         //For interactive door
+         this.toyDoor = this.add.image(187, 260, 'td').setOrigin(0, 0);
+
+        this.p1 = new Character(this, 100, 275, 'guy6').setOrigin(0, 0);
+        this.p2 = new Character(this, 100, 275, 'guyr6').setOrigin(0, 0);
         this.p2.setVisible(false);
         keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
 
-        this.textbox = this.add.image(360, 440, 'textbox').setScale(.6).scaleY=.3;
-        this.text1 = this.add.text(260, 435);
-        this.text1.setText(`Press T to Enter Store`);
+       // this.textbox = this.add.image(360, 440, 'textbox').setScale(.6).scaleY=.3;
+        this.text = this.add.text(260, 435);
+        this.text.setText(`<-> to move around`);
+
 
         this.cameras.main.fadeIn(1000, 0, 0, 0)
 
+        //Interactive text
+        this.text1 = this.add.text(180, 260, 'Press T to enter');
+        this.text1.setVisible(false);
 
     }
 
@@ -54,6 +64,12 @@ class Scene6 extends Phaser.Scene {
             this.p2.setVisible(false);
         }
 
+        if(this.checkCollision(this.p1, this.toyDoor)) {
+            this.text1.setVisible(true);
+        }else{
+            this.text1.setVisible(false);
+        }
+
             /*if(this.checkCollision(this.p1, this.dr) && this.clothCounter == false || this.checkCollision(this.p2, this.dr) && this.clothCounter == false) {
                 this.text1.setVisible(true);
                  }else{
@@ -62,6 +78,7 @@ class Scene6 extends Phaser.Scene {
        // }
     //}
 
+
         if (Phaser.Input.Keyboard.JustDown(keyT)) {
             //this.sound.play('sfx_select');
             this.scene.start("Scene7");    
@@ -69,7 +86,7 @@ class Scene6 extends Phaser.Scene {
 
     }
 
-   /* checkCollision(person, door) {
+    checkCollision(person, door) {
         if (person.x < door.x + door.width && 
             person.x + person.width > door.x && 
             person.y < door.y + door.height &&
@@ -78,5 +95,5 @@ class Scene6 extends Phaser.Scene {
         } else {
             return false;
         }
-    }*/
+    }
 }
