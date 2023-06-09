@@ -6,7 +6,7 @@ class Scene9 extends Phaser.Scene {
     counter = 0;
     preload() {
         this.load.image('plant', './assets/flowershop.png'); 
-        this.load.image('girl9', './assets/Player1.png');
+        this.load.image('girl9', './assets/sam.png');
         this.load.image('rose', './assets/objects/rose.png');    
         this.load.image('succulent', './assets/objects/suc.png');  
         this.load.image('cashier1', './assets/flowershop-cashier.png'); 
