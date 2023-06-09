@@ -9,7 +9,8 @@ class Scene7 extends Phaser.Scene {
         this.load.image('plush', './assets/objects/plush.png');
         this.load.image('rp', './assets/objects/r.png');
         this.load.image('cashier', './assets/toystore-cashier.png');
-        this.load.image('boy7', './assets/player2.png');
+        this.load.image('guy7', './assets/charlie.png');
+        this.load.image('guyr7', './assets/charliereflect.png');
         this.load.image('textbox', './assets/textbox.png');
 
         //this.load.image('guys', './assets/player2.png');
@@ -18,20 +19,23 @@ class Scene7 extends Phaser.Scene {
     create() {
         //add background to scene
         this.add.image(0, 0, 'toy').setOrigin(0, 0);
-        this.add.image(0, 0, 'plush').setScale(.5).setOrigin(0, 0);
-        this.add.image(0, 0, 'rp').setScale(.5).setOrigin(0, 0);
         this.add.image(30, 120, 'cashier').setScale(.5).setOrigin(0, 0);
         //this.add.image(0, 280, 'boy7').setOrigin(0, 0);
         keyM = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);  //interact with object
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
+        //Interactive Images
+        this.kan = this.add.image(0, 0, 'plush').setOrigin(0, 0);
+        this.pan = this.add.image(0, 0, 'rp').setOrigin(0, 0);
+
         this.textbox = this.add.image(420, 425, 'textbox').setScale(.3).scaleX=1.2;
         this.text = this.add.text(135, 140); //325, 435
         this.text2 = this.add.text(225, 410);
 
-        this.p2 = new Character(this, 0, 200, 'boy7').setOrigin(0, 0);
-
+        this.p1 = new Character(this, 100, 100, 'guy7').setOrigin(0, 0);
+        this.p2 = new Character(this, 100, 100, 'guyr7').setOrigin(0, 0);
+        this.p2.setVisible(false);
         //this.item = new Item(this, 0, 0, 'plush').setScale(.5).setOrigin(0, 0);
         //this.item1 = new Item(this, 0, 0, 'rp').setScale(.5).setOrigin(0, 0);
 
@@ -52,6 +56,10 @@ class Scene7 extends Phaser.Scene {
         
         const startButton = new Button(488, 460, '...', this, () => this.counter += 1);
 
+        //Interactive Text
+        this.text1 = this.add.text(575, 100, 'Press SHIFT\nto change');
+        this.text1.setVisible(false);
+
         this.cameras.main.fadeIn(1000, 0, 0, 0)
 
 
@@ -59,19 +67,31 @@ class Scene7 extends Phaser.Scene {
 
     update() {
 
+        this.p1.update();
         this.p2.update();
 
-        if (Phaser.Input.Keyboard.JustDown(keyM)) {
+        /*if (Phaser.Input.Keyboard.JustDown(keyM)) {
             if (this.checkCollision(this.p2, this.item)) {
                 this.item.setVisible(false);
                 this.item.destroy();
             }
-            //this.counter == 5;
-            //this.keyObj = this.input.keyboard.addKey('M');
-            //this.keyObj.destroy();
-            //this.collectPlush(this.toy);
-            //this.collectPlush(this.toy1);
+        }*/
+
+        if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
+            this.p1.setVisible(false);
+            this.p2.setVisible(true);
         }
+
+        if(Phaser.Input.Keyboard.JustDown(keyRIGHT)){
+            this.p1.setVisible(true);
+            this.p2.setVisible(false);
+        }
+
+        /*if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan)) {
+            this.text1.setVisible(true);
+        }else{
+            this.text1.setVisible(false);
+        }*/
 
         if(this.counter == 1){
            this.text.setText(` `);
@@ -94,21 +114,14 @@ class Scene7 extends Phaser.Scene {
         }
     }
 
-    checkCollision(p2, item){
-        if(p2.x < item.x + item.width &&
-            p2.x + p2.width > item.x &&
-            p2.y < item.y + item.height &&
-            p2.height + p2.y > item.y){
+    checkCollision(person, door) {
+        if (person.x < door.x + door.width && 
+            person.x + person.width > door.x && 
+            person.y < door.y + door.height &&
+            person.height + person.y > door.y) {
                 return true;
-        }else{
+        } else {
             return false;
         }
     }
-    /*collectPlush(p2, plush, rp) {
-        let toy = this.add.sprite(plush, 'plush').setOrigin(0, 0);
-        let toy1 = this.add.sprite(rp, 'rp').setOrigin(0, 0);
-        toy.destroy();
-        toy1.destroy();
-        return false;
-    }*/
 }
