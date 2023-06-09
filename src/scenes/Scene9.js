@@ -7,6 +7,7 @@ class Scene9 extends Phaser.Scene {
     preload() {
         this.load.image('plant', './assets/flowershop.png'); 
         this.load.image('girl9', './assets/sam.png');
+        this.load.image('girlr9', './assets/samreflect.png');
         this.load.image('rose', './assets/objects/rose.png');    
         this.load.image('succulent', './assets/objects/suc.png');  
         this.load.image('cashier1', './assets/flowershop-cashier.png'); 
@@ -30,6 +31,9 @@ class Scene9 extends Phaser.Scene {
         this.text2 = this.add.text(135, 140);
         
         this.p1 = new Character(this, 50, 160, 'girl9').setOrigin(0, 0);
+        this.p2 = new Character(this, 50, 160, 'girlr9').setOrigin(0, 0);
+        this.p2.setVisible(false);
+
 
         this.textbox = this.add.image(370, 420, 'textbox').setScale(.9).scaleY=.3;
         this.text2.setText(`Hi welcome!`);
@@ -60,6 +64,17 @@ class Scene9 extends Phaser.Scene {
     update() {
 
         this.p1.update();
+        this.p2.update();
+
+        if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
+            this.p1.setVisible(false);
+            this.p2.setVisible(true);
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyRIGHT)){
+            this.p1.setVisible(true);
+            this.p2.setVisible(false);
+        }
         
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;

@@ -7,6 +7,7 @@ class Scene8 extends Phaser.Scene {
     preload() {
         this.load.image('street2', './assets/street2.png');
         this.load.image('girl8', './assets/sam.png');
+        this.load.image('girlr8', './assets/samreflect.png');
         this.load.image('textbox', './assets/textbox.png');
 
 
@@ -24,7 +25,10 @@ class Scene8 extends Phaser.Scene {
         this.text = this.add.text(200, 435); //325, 435
 
         //For person
-        this.p2 = new Character(this, 150, 300, 'girl8').setScale(.5).setOrigin(0, 0);
+        this.p1 = new Character(this, 150, 300, 'girl8').setScale(.5).setOrigin(0, 0);
+        this.p2 = new Character(this, 150, 300, 'girlr8').setScale(.5).setOrigin(0, 0);
+        this.p2.setVisible(false);
+
 
         keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
 
@@ -37,8 +41,18 @@ class Scene8 extends Phaser.Scene {
     }
 
     update() {
-
+        this.p1.update();
         this.p2.update();
+
+        if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
+            this.p1.setVisible(false);
+            this.p2.setVisible(true);
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyRIGHT)){
+            this.p1.setVisible(true);
+            this.p2.setVisible(false);
+        }
 
         if (Phaser.Input.Keyboard.JustDown(keyT)) {
             //this.sound.play('sfx_select');
