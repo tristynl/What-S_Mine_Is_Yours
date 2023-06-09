@@ -26,11 +26,11 @@ class Scene7 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
         //Interactive Images
-        this.kan = this.add.image(0, 0, 'plush').setOrigin(0, 0);
+        this.kan = this.add.image(250, 190, 'plush').setOrigin(0, 0);
         this.pan = this.add.image(0, 0, 'rp').setOrigin(0, 0);
 
         this.textbox = this.add.image(420, 425, 'textbox').setScale(.3).scaleX=1.2;
-        this.text = this.add.text(135, 140); //325, 435
+        this.text = this.add.text(115, 100); //325, 435
         this.text2 = this.add.text(225, 410);
 
         this.p1 = new Character(this, 100, 100, 'guy7').setOrigin(0, 0);
@@ -57,7 +57,7 @@ class Scene7 extends Phaser.Scene {
         const startButton = new Button(488, 460, '...', this, () => this.counter += 1);
 
         //Interactive Text
-        this.text1 = this.add.text(575, 100, 'Press SHIFT\nto change');
+        this.text1 = this.add.text(300, 50, 'Press M to Take');
         this.text1.setVisible(false);
 
         this.cameras.main.fadeIn(1000, 0, 0, 0)
@@ -70,12 +70,12 @@ class Scene7 extends Phaser.Scene {
         this.p1.update();
         this.p2.update();
 
-        /*if (Phaser.Input.Keyboard.JustDown(keyM)) {
-            if (this.checkCollision(this.p2, this.item)) {
-                this.item.setVisible(false);
-                this.item.destroy();
-            }
-        }*/
+        if (Phaser.Input.Keyboard.JustDown(keyM)) {
+            if ((this.checkCollision(this.p1, this.kan)) || (this.checkCollision(this.p2, this.kan))){
+                this.kan.setVisible(false);
+            } 
+    
+        }
 
         if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
             this.p1.setVisible(false);
@@ -87,11 +87,11 @@ class Scene7 extends Phaser.Scene {
             this.p2.setVisible(false);
         }
 
-        /*if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan)) {
+        if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan)) {
             this.text1.setVisible(true);
         }else{
             this.text1.setVisible(false);
-        }*/
+        }
 
         if(this.counter == 1){
            this.text.setText(` `);
