@@ -9,7 +9,8 @@ class Scene4 extends Phaser.Scene {
         this.load.image('textbox', './assets/textbox.png');
 
 
-        this.load.image('girlr', './assets/samreflect.png');
+        this.load.image('girlr4', './assets/samreflect.png');
+        this.load.image('girl4', './assets/sam.png');
         
     }
 
@@ -23,7 +24,9 @@ class Scene4 extends Phaser.Scene {
         this.text = this.add.text(180, 435, ' '); 
         this.text.setText(`Time to get ready!`);
 
-        this.p1 = new Character(this, 680, 200, 'girlr').setOrigin(0, 0);
+        this.p2 = new Character(this, 680, 200, 'girlr4').setOrigin(0, 0);
+        this.p1 = new Character(this, 680, 200, 'girl4').setOrigin(0, 0);
+        this.p2.setVisible(false);
 
         //Button
         let buttonConfig = {
@@ -47,8 +50,18 @@ class Scene4 extends Phaser.Scene {
     update() {
 
         this.p1.update();
+        this.p2.update();
 
-    
+        if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
+            this.p1.setVisible(false);
+            this.p2.setVisible(true);
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyRIGHT)){
+            this.p1.setVisible(true);
+            this.p2.setVisible(false);
+        }
+
         if(this.counter == 1){
            this.text.setText(` `);
         }

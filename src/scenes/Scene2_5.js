@@ -11,7 +11,8 @@ class Scene2_5 extends Phaser.Scene {
 
 
          //Character
-         this.load.image('girl2', './assets/Player1.png');
+         this.load.image('girl2', './assets/sam.png');
+         this.load.image('girl2r', './assets/samreflect.png')
 
          this.load.image('tBox', './assets/textbox.png');
 
@@ -26,6 +27,9 @@ class Scene2_5 extends Phaser.Scene {
 
         //Character
         this.p1 = new Character(this, 200, 200, 'girl2').setOrigin(0, 0);
+        this.p2 = new Character(this, 200, 200, 'girl2r').setOrigin(0, 0);
+        this.p2.setVisible(false);
+
 
         //For text
         this.textbox = this.add.image(370, 440, 'textbox').setScale(.3).scaleX=1;
@@ -63,6 +67,17 @@ class Scene2_5 extends Phaser.Scene {
     update() {
        
         this.p1.update();
+        this.p2.update();
+
+        if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
+            this.p1.setVisible(false);
+            this.p2.setVisible(true);
+        }
+
+        if(Phaser.Input.Keyboard.JustDown(keyRIGHT)){
+            this.p1.setVisible(true);
+            this.p2.setVisible(false);
+        }
 
 
         if(this.counter == 1){
