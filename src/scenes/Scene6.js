@@ -12,6 +12,7 @@ class Scene6 extends Phaser.Scene {
         this.load.image('textbox', './assets/textbox.png');
 
         this.load.image('td', './assets/toydoor.png');
+        this.load.image('cd', './assets/chocodoor.png')
 
         
     }
@@ -28,7 +29,8 @@ class Scene6 extends Phaser.Scene {
         this.text1 = this.add.text(520, 470);
 
          //For interactive door
-         this.toyDoor = this.add.image(187, 260, 'td').setOrigin(0, 0);
+        this.toyDoor = this.add.image(187, 260, 'td').setOrigin(0, 0);
+        this.chocolateDoor = this.add.image(445,240, 'cd').setOrigin(0,0); 
 
         this.p1 = new Character(this, 100, 275, 'guy6').setOrigin(0, 0);
         this.p2 = new Character(this, 100, 275, 'guyr6').setOrigin(0, 0);
@@ -45,6 +47,9 @@ class Scene6 extends Phaser.Scene {
         //Interactive text
         this.text1 = this.add.text(180, 260, 'Press T to enter');
         this.text1.setVisible(false);
+
+        this.text2 = this.add.text(500, 260, 'Press T to enter');
+        this.text2.setVisible(false);
 
     }
 
@@ -70,6 +75,12 @@ class Scene6 extends Phaser.Scene {
             this.text1.setVisible(false);
         }
 
+        if(this.checkCollision(this.p1, this.chocolateDoor)) {
+            this.text2.setVisible(true);
+        }else{
+            this.text2.setVisible(false);
+        }
+
             /*if(this.checkCollision(this.p1, this.dr) && this.clothCounter == false || this.checkCollision(this.p2, this.dr) && this.clothCounter == false) {
                 this.text1.setVisible(true);
                  }else{
@@ -79,7 +90,7 @@ class Scene6 extends Phaser.Scene {
     //}
 
 
-        if (Phaser.Input.Keyboard.JustDown(keyT)) {
+        if (Phaser.Input.Keyboard.JustDown(keyT) && this.checkCollision(this.p1, this.toyDoor)) {
             //this.sound.play('sfx_select');
             this.scene.start("Scene7");    
         }

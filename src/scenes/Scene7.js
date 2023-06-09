@@ -27,7 +27,7 @@ class Scene7 extends Phaser.Scene {
 
         //Interactive Images
         this.kan = this.add.image(250, 190, 'plush').setOrigin(0, 0);
-        this.pan = this.add.image(0, 0, 'rp').setOrigin(0, 0);
+        this.pan = this.add.image(505, 210, 'rp').setOrigin(0, 0);
 
         this.textbox = this.add.image(420, 425, 'textbox').setScale(.3).scaleX=1.2;
         this.text = this.add.text(115, 100); //325, 435
@@ -72,7 +72,13 @@ class Scene7 extends Phaser.Scene {
 
         if (Phaser.Input.Keyboard.JustDown(keyM)) {
             if ((this.checkCollision(this.p1, this.kan)) || (this.checkCollision(this.p2, this.kan))){
-                this.kan.setVisible(false);
+                this.kan.destroy();
+                this.text1.destroy();
+                //this.kan.setVisible(false);
+            } 
+
+            if ((this.checkCollision(this.p1, this.pan)) || (this.checkCollision(this.p2, this.pan))){
+                this.pan.setVisible(false);
             } 
     
         }
@@ -87,7 +93,8 @@ class Scene7 extends Phaser.Scene {
             this.p2.setVisible(false);
         }
 
-        if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan)) {
+        //MUST FIX
+        if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan) || this.checkCollision(this.p1, this.pan) || this.checkCollision(this.p2, this.pan)) {
             this.text1.setVisible(true);
         }else{
             this.text1.setVisible(false);
