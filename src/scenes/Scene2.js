@@ -9,8 +9,8 @@ class Scene2 extends Phaser.Scene {
         this.load.image('bedroom1', './assets/girlbed.png');
         this.load.image('textbox', './assets/textbox.png');
 
-         //Character
-         this.load.image('girl2', './assets/sam.png');
+        //Character
+        this.load.image('girl2', './assets/sam.png');
         
     }
 

@@ -9,7 +9,7 @@ class Scene4 extends Phaser.Scene {
         this.load.image('textbox', './assets/textbox.png');
 
 
-        this.load.image('girlr', './assets/player1ref.png');
+        this.load.image('girlr', './assets/samreflect.png');
         
     }
 
