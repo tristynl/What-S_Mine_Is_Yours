@@ -8,8 +8,8 @@ class Scene8 extends Phaser.Scene {
         this.load.image('street2', './assets/street2.png');
         this.load.image('girl8', './assets/sam.png');
         this.load.image('girlr8', './assets/samreflect.png');
-        this.load.image('textbox', './assets/textbox.png');
 
+        this.load.image('fd', './assets/flowerdoor.png');
 
         
         
@@ -22,7 +22,9 @@ class Scene8 extends Phaser.Scene {
         keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        this.text = this.add.text(200, 435); //325, 435
+
+        //For the Door
+        this.flowerDoor = this.add.image(273, 260, 'fd').setOrigin(0, 0);
 
         //For person
         this.p1 = new Character(this, 150, 300, 'girl8').setScale(.5).setOrigin(0, 0);
@@ -32,9 +34,12 @@ class Scene8 extends Phaser.Scene {
 
         keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
 
-        this.textbox = this.add.image(370, 440, 'textbox').setScale(.6).scaleY=.3;
-        this.text1 = this.add.text(260, 435);
-        this.text1.setText(`Press T to Enter Store`);
+        this.text = this.add.text(260, 435);
+        this.text.setText(`<-> to move around`);
+
+        this.text1 = this.add.text(255, 245);
+        this.text1.setText(`Press T to Enter`);
+        this.text1.setVisible(false);
 
         this.cameras.main.fadeIn(1000, 0, 0, 0)
 
@@ -54,10 +59,28 @@ class Scene8 extends Phaser.Scene {
             this.p2.setVisible(false);
         }
 
-        if (Phaser.Input.Keyboard.JustDown(keyT)) {
-            //this.sound.play('sfx_select');
-            this.scene.start("Scene9");    
-          }
+        if(this.checkCollision(this.p1, this.flowerDoor)) {
+            this.text1.setVisible(true);
+        }else{
+            this.text1.setVisible(false);
+        }
 
+        if(Phaser.Input.Keyboard.JustDown(keyT) && this.checkCollision(this.p1, this.flowerDoor)){
+                this.scene.start("Scene9");    
+            
+               
+        }
+
+    }
+
+    checkCollision(person, door) {
+        if (person.x < door.x + door.width && 
+            person.x + person.width > door.x && 
+            person.y < door.y + door.height &&
+            person.height + person.y > door.y) {
+                return true;
+        } else {
+            return false;
+        }
     }
 }

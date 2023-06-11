@@ -4,9 +4,10 @@ class Scene7 extends Phaser.Scene {
     }
 
     counter = 0;
+    take = 0;
     preload() {
         this.load.image('toy', './assets/toystore.png');
-        this.load.image('plush', './assets/objects/plush.png');
+        this.load.image('plush', './assets/objects/kang.png');
         this.load.image('rp', './assets/objects/r.png');
         this.load.image('cashier', './assets/toystore-cashier.png');
         this.load.image('guy7', './assets/charlie.png');
@@ -60,6 +61,9 @@ class Scene7 extends Phaser.Scene {
         this.text1 = this.add.text(300, 50, 'Press M to Take');
         this.text1.setVisible(false);
 
+        this.text3 = this.add.text(500, 50, 'Press M to Take');
+        this.text3.setVisible(false);
+
         this.cameras.main.fadeIn(1000, 0, 0, 0)
 
 
@@ -71,15 +75,20 @@ class Scene7 extends Phaser.Scene {
         this.p2.update();
 
         if (Phaser.Input.Keyboard.JustDown(keyM)) {
-            if ((this.checkCollision(this.p1, this.kan)) || (this.checkCollision(this.p2, this.kan))){
-                this.kan.destroy();
-                this.text1.destroy();
+            if(this.take == 0){
+                if ((this.checkCollision(this.p1, this.kan)) || (this.checkCollision(this.p2, this.kan))){
+                    this.kan.destroy();
+                    this.text1.destroy();
+                    this.take++;
                 //this.kan.setVisible(false);
-            } 
+                } 
 
-            if ((this.checkCollision(this.p1, this.pan)) || (this.checkCollision(this.p2, this.pan))){
-                this.pan.setVisible(false);
-            } 
+                if ((this.checkCollision(this.p1, this.pan)) || (this.checkCollision(this.p2, this.pan))){
+                    this.pan.destroy();
+                    this.text3.destroy();
+                    this.take++;
+                } 
+            }
     
         }
 
@@ -94,11 +103,23 @@ class Scene7 extends Phaser.Scene {
         }
 
         //MUST FIX
-        if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan) || this.checkCollision(this.p1, this.pan) || this.checkCollision(this.p2, this.pan)) {
+        if(this.take == 0){
+        if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan)) {
             this.text1.setVisible(true);
         }else{
             this.text1.setVisible(false);
         }
+
+        if(this.checkCollision(this.p1, this.pan) || this.checkCollision(this.p2, this.pan)) {
+            this.text3.setVisible(true);
+        }else{
+            this.text3.setVisible(false);
+        }
+        }else{
+            this.text1.setVisible(false);
+            this.text3.setVisible(false);
+        }
+
 
         if(this.counter == 1){
            this.text.setText(` `);

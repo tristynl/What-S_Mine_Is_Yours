@@ -18,13 +18,10 @@ class Scene9 extends Phaser.Scene {
         //Add background to scene
         //this.add.image(50, 100, 'girl1').setOrigin(0, 0);
         this.add.image(0, 0, 'plant').setOrigin(0, 0);      
-        this.add.image(0, -10, 'rose').setScale(.5).setOrigin(0.0);
-        this.add.image(0, 0, 'succulent').setScale(.5).setOrigin(0, 0);
+        this.add.image(370, 160, 'rose').setOrigin(0.0);
+        this.add.image(549, 130, 'succulent').setOrigin(0, 0);
         this.add.image(0, 90, 'cashier1').setScale(.5).setOrigin(0, 0);
 
-
-        keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
-        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 

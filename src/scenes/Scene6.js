@@ -81,22 +81,14 @@ class Scene6 extends Phaser.Scene {
             this.text2.setVisible(false);
         }
 
-            /*if(this.checkCollision(this.p1, this.dr) && this.clothCounter == false || this.checkCollision(this.p2, this.dr) && this.clothCounter == false) {
-                this.text1.setVisible(true);
-                 }else{
-                this.text1.setVisible(false);
-            }*/
-       // }
-    //}
 
-
-        if (Phaser.Input.Keyboard.JustDown(keyT) && this.checkCollision(this.p1, this.toyDoor)) {
-            //this.sound.play('sfx_select');
-            this.scene.start("Scene7");    
-        }
-        if (Phaser.Input.Keyboard.JustDown(keyT) && this.checkCollision(this.p1, this.chocolateDoor)) {
-            //this.sound.play('sfx_select');
-            this.scene.start("Scene7_5");    
+        if(Phaser.Input.Keyboard.JustDown(keyT)){
+            if(this.checkCollision(this.p1, this.toyDoor)){
+                this.scene.start("Scene7");    
+            }
+            if(this.checkCollision(this.p1, this.chocolateDoor)){
+                this.scene.start("Scene7_5");     
+            }    
         }
 
     }
