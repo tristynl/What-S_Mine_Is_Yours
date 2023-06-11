@@ -12,7 +12,7 @@ class Scene2_5 extends Phaser.Scene {
 
          //Character
          this.load.image('girl2', './assets/sam.png');
-         this.load.image('girl2r', './assets/samreflect.png')
+        this.load.image('girlr2', './assets/samreflect.png');
 
          this.load.image('tBox', './assets/textbox.png');
 
@@ -26,8 +26,8 @@ class Scene2_5 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
         //Character
-        this.p1 = new Character(this, 200, 200, 'girl2').setOrigin(0, 0);
-        this.p2 = new Character(this, 200, 200, 'girl2r').setOrigin(0, 0);
+        this.p1 = new Character(this, 100, 120, 'girl2').setOrigin(0, 0);
+        this.p2 = new Character(this, 100, 120, 'girlr2').setOrigin(0, 0);
         this.p2.setVisible(false);
 
 
@@ -69,6 +69,7 @@ class Scene2_5 extends Phaser.Scene {
         this.p1.update();
         this.p2.update();
 
+        
         if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
             this.p1.setVisible(false);
             this.p2.setVisible(true);

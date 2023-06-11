@@ -8,9 +8,8 @@ class Scene4 extends Phaser.Scene {
         this.load.image('bathroom', './assets/bathroom.png');
         this.load.image('textbox', './assets/textbox.png');
 
-
-        this.load.image('girlr4', './assets/samreflect.png');
         this.load.image('girl4', './assets/sam.png');
+        this.load.image('girlr4', './assets/samreflect.png');
         
     }
 
@@ -24,8 +23,8 @@ class Scene4 extends Phaser.Scene {
         this.text = this.add.text(180, 435, ' '); 
         this.text.setText(`Time to get ready!`);
 
-        this.p2 = new Character(this, 680, 200, 'girlr4').setOrigin(0, 0);
-        this.p1 = new Character(this, 680, 200, 'girl4').setOrigin(0, 0);
+        this.p1 = new Character(this, 100, 120, 'girl4').setOrigin(0, 0);
+        this.p2 = new Character(this, 100, 120, 'girlr4').setOrigin(0, 0);
         this.p2.setVisible(false);
 
         //Button
@@ -43,6 +42,9 @@ class Scene4 extends Phaser.Scene {
         const startButton = new Button(525, 460, '...', this, () => this.counter += 1);
 
         this.cameras.main.fadeIn(1000, 0, 0, 0)
+
+        this.text1 = this.add.text(180, 200, 'Press Shift to Get Ready'); 
+        this.text1.setVisible(false);
 
 
     }
@@ -62,8 +64,15 @@ class Scene4 extends Phaser.Scene {
             this.p2.setVisible(false);
         }
 
+        /*if(this.checkCollision(this.p1, this.dr) && this.clothCounter == false || this.checkCollision(this.p2, this.dr) && this.clothCounter == false) {
+            this.text1.setVisible(true);
+             }else{
+            this.text1.setVisible(false);
+        }*/
+
         if(this.counter == 1){
            this.text.setText(` `);
+           this.textbox.setVisible(false);
         }
 
         if(this.counter >= 2){
@@ -71,5 +80,16 @@ class Scene4 extends Phaser.Scene {
 
         }
        
+    }
+
+    checkCollision(person, door) {
+        if (person.x < door.x + door.width && 
+            person.x + person.width > door.x && 
+            person.y < door.y + door.height &&
+            person.height + person.y > door.y) {
+                return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -5,18 +5,14 @@ class Note extends Phaser.Scene {
 
     counter = 0;
     preload() {
-        this.load.image('bedroom', './assets/boybodybed.png');
+        this.load.image('in1', './assets/intro1.png');
     }
 
     create() {
         //add background to scene
-        this.add.image(0, 0, 'bedroom').setOrigin(0, 0);
-        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        this.add.image(0, 0, 'in1').setOrigin(0, 0);
         
         this.text1 = this.add.text(200, 200);
-        this.text1.setText(`Throughout the Gamefeel free to use\narrow keys <-> to interact with the scene`);
-
-        //this.player = this.physics.add.sprite(680, 200, 'player')
 
          //Button
          let buttonConfig = {
@@ -32,7 +28,7 @@ class Note extends Phaser.Scene {
             },
             //fixedWidth: 0
         }  
-        const startButton = new Button(370, 300, 'Click Here To Start', this, () => this.scene.start('Scene1'));
+        const startButton = new Button(370, 300, 'Click Here To Open', this, () => this.scene.start('SceneNote2'));
     }
 
    

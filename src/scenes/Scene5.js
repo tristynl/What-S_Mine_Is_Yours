@@ -25,8 +25,8 @@ class Scene5 extends Phaser.Scene {
         keyDOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
 
         //const frame = this.add.image(40 + a * 2, 300, 'arrow').setAngle(a);
-        this.p1 = new Girl(this, 410, 120, 'girl5').setOrigin(0,0).setScale(0.5).setAngle(20);
-        this.p2 = new Boy(this, 290, 130, 'boys5').setOrigin(0,0).setScale(0.5).setAngle(-20);
+        this.p1 = new Character(this, 395, 120, 'girl5').setOrigin(0,0).setScale(0.5).setAngle(20);
+        this.p2 = new Character(this, 295, 120, 'boys5').setOrigin(0,0).setScale(0.5).setAngle(-20);
 
 
         //For text
@@ -59,15 +59,15 @@ class Scene5 extends Phaser.Scene {
 
     update() {
 
-        this.p1.update();
-        this.p2.update();
+        //this.p1.update();
+        //this.p2.update();
 
 
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;
         }
 
-        if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
+        /*if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
             this.p1.setVisible(false);
             this.p2.setVisible(true);
         }
@@ -75,7 +75,7 @@ class Scene5 extends Phaser.Scene {
         if(Phaser.Input.Keyboard.JustDown(keyRIGHT)){
             this.p1.setVisible(true);
             this.p2.setVisible(false);
-        }
+        }*/
 
         if(this.counter == 1){
            this.text.setText(` `);
