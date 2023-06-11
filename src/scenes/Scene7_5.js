@@ -103,6 +103,10 @@ class Scene7_5 extends Phaser.Scene {
             this.text1.setVisible(false);
             this.text3.setVisible(false);
         }
+
+        if(this.counter > 1){
+            this.scene.start('Scene8');    
+        }
     }
 
     checkCollision(person, door) {

@@ -48,7 +48,7 @@ class Scene6 extends Phaser.Scene {
         this.text1 = this.add.text(180, 260, 'Press T to enter');
         this.text1.setVisible(false);
 
-        this.text2 = this.add.text(500, 260, 'Press T to enter');
+        this.text2 = this.add.text(420, 235, 'Press T to enter');
         this.text2.setVisible(false);
 
     }
