@@ -72,7 +72,7 @@ class Scene4 extends Phaser.Scene {
 
         if(this.counter == 1){
            this.text.setText(` `);
-           this.textbox.setVisible(false);
+           //this.textbox.setVisible(false);
         }
 
         if(this.counter >= 2){

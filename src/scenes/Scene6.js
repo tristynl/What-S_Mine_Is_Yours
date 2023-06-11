@@ -94,6 +94,10 @@ class Scene6 extends Phaser.Scene {
             //this.sound.play('sfx_select');
             this.scene.start("Scene7");    
         }
+        if (Phaser.Input.Keyboard.JustDown(keyT) && this.checkCollision(this.p1, this.chocolateDoor)) {
+            //this.sound.play('sfx_select');
+            this.scene.start("Scene7_5");    
+        }
 
     }
 
