@@ -101,17 +101,17 @@ class Scene7 extends Phaser.Scene {
 
         
         if(this.take == 0){
-        if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan)) {
-            this.text1.setVisible(true);
-        }else{
-            this.text1.setVisible(false);
-        }
+            if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan)) {
+                this.text1.setVisible(true);
+            }else{
+                this.text1.setVisible(false);
+            }
 
-        if(this.checkCollision(this.p1, this.pan) || this.checkCollision(this.p2, this.pan)) {
-            this.text3.setVisible(true);
-        }else{
-            this.text3.setVisible(false);
-        }
+            if(this.checkCollision(this.p1, this.pan) || this.checkCollision(this.p2, this.pan)) {
+                this.text3.setVisible(true);
+            }else{
+                this.text3.setVisible(false);
+            }
         }else{
             this.text1.setVisible(false);
             this.text3.setVisible(false);

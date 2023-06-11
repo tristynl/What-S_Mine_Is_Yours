@@ -64,7 +64,7 @@ class Note2 extends Phaser.Scene {
 
 
 
-        const startButton = new Button(375, 450, 'Click Here To Continue', this, () => this.scene.start('Scene05'));
+        const startButton = new Button(375, 450, 'Click Here To Continue', this, () => this.scene.start('Scene1'));
 
         this.add.text(380 , 200, 'Hi Sam!\n\nI … um … have never written anyone a letter before, so\ndon’t mind me if I seem kind of new to this, but I\njust wanted to tell you how excited I am to go with you\non this date this weekend!After meeting you for the very\nfirst time the other day, I really felt like you’re someone\nthat I want and need to get to know more about. There\nare a lot of things I want to know about you.Like what\nyour favorite song is or what your favorite food is?!!\nI’m sure there are a lot of things that you\nwant to know about me as well …. I hope … Anyways,\num … I’m looking forward to seeing\nyou this weekend! You rock!\n\nBest wishes,\nCharlie :)', tConfig).setOrigin(0.5);
 
