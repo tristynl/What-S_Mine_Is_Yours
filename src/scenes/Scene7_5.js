@@ -21,8 +21,8 @@ class Scene7_5 extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
         //Interactive Images
-        this.ch = this.add.image(100, 250, 'choco').setOrigin(0, 0);
-        this.co = this.add.image(530, 150, 'cotto').setOrigin(0, 0);
+        this.ch = this.add.image(182, 265, 'choco').setOrigin(0, 0);
+        this.co = this.add.image(585, 110, 'cotto').setOrigin(0, 0);
 
         this.p1 = new Character(this, 100, 100, 'guy75').setOrigin(0, 0);
         this.p2 = new Character(this, 100, 100, 'guyr75').setOrigin(0, 0);
