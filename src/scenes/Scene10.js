@@ -30,8 +30,8 @@ class Scene10 extends Phaser.Scene {
         this.text2.setText(`Hey!`);
 
 
-        this.p1 = new Character(this, 100, 200, 'girl10').setOrigin(0, 0);
-        this.p2 = new Character(this, 600, 200, 'boy10').setOrigin(0, 0);
+        this.p1 = new Character(this, 100, 100, 'girl10').setOrigin(0, 0);
+        this.p2 = new Character(this, 600, 100, 'boy10').setOrigin(0, 0);
 
          //Button
          let buttonConfig = {
@@ -56,8 +56,8 @@ class Scene10 extends Phaser.Scene {
 
     update() {
 
-        this.p1.update();
-        this.p2.update();
+        //this.p1.update();
+        //this.p2.update();
         
         if (Phaser.Input.Keyboard.JustDown(keyD)) {
             this.counter += 1;

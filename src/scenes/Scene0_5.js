@@ -16,8 +16,7 @@ class Scene0_5 extends Phaser.Scene {
         this.textbox = this.add.image(400, 300, 'centextbox').scaleY=0.5;
         //this.textbox.scaleX = 3;
 
-        this.text1 = this.add.text(220, 280);
-        this.text1.setText(`Throughout the Gamefeel free to use\narrow keys <-> to interact with the\nscene`);
+        
        
 
         //Button

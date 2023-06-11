@@ -13,8 +13,6 @@ class Scene7 extends Phaser.Scene {
         this.load.image('guy7', './assets/charlie.png');
         this.load.image('guyr7', './assets/charliereflect.png');
         this.load.image('textbox', './assets/textbox.png');
-
-        //this.load.image('guys', './assets/player2.png');
     }
 
     create() {
@@ -89,7 +87,6 @@ class Scene7 extends Phaser.Scene {
                     this.take++;
                 } 
             }
-    
         }
 
         if(Phaser.Input.Keyboard.JustDown(keyLEFT)){
@@ -102,7 +99,7 @@ class Scene7 extends Phaser.Scene {
             this.p2.setVisible(false);
         }
 
-        //MUST FIX
+        
         if(this.take == 0){
         if(this.checkCollision(this.p1, this.kan) || this.checkCollision(this.p2, this.kan)) {
             this.text1.setVisible(true);
