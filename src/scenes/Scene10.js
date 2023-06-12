@@ -136,6 +136,7 @@ class Scene10 extends Phaser.Scene {
         }
         if(this.counter >= 18) {
             this.restartButton = new Button(370, 300, 'Restart Game', this, () => this.scene.start("menuScene"));
+            this.sound.get('chill_bg').stop();
 
         }
         

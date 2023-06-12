@@ -32,32 +32,23 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
         }
 
-        /* const text1 = this.add.text(375, 175, 'What\'s Mine \nIs Yours', {
-            fontFamily: 'Courier',
-            fontSize: '50px',
-            color: 'pink',
-            align: 'center',
-            padding: {
-                left: 5,
-                right: 5
-            }
-        }); */
-
          //Button
          let buttonConfig = {
             fontFamily: 'Georgia',
-            fontSize: '50px',
+            fontSize: '75px',
             color: 'pink', //#843605
             align: 'center',
             padding: {
-                top: 30,
-                bottom: 30,
-                left: 30,
-                right: 30,
+                top: 50,
+                bottom: 50,
+                left: 50,
+                right: 50,
             },
             //fixedWidth: 0
         }  
-        const startButton = new Button(525, 380, 'Start Game', this, () => this.scene.start('SceneNote'));
+        const startButton = new MenuButton(525, 380, 'Start Game', this, () => this.scene.start('SceneNote'));
+        const creditButton = new MenuButton(528, 435, 'Credit Page', this, () => this.scene.start('CreditScene'));
+
 
         //Define keys
         keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
